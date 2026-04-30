@@ -1,420 +1,402 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.4">
-  <style type="text/css">
-    body {background-color: #efeff2}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Love Our Leaders">
+<meta name="theme-color" content="#185FA5">
+<title>Love Our Leaders</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{background:#f5f5f7;min-height:100vh;overscroll-behavior:none}
+.hdr{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:100;padding:12px 16px 0}
+.logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.logo-left{display:flex;align-items:center;gap:10px}
+.logo-icon{width:32px;height:32px;border-radius:50%;background:#FAECE7;display:flex;align-items:center;justify-content:center;color:#993C1D;font-size:18px;flex-shrink:0}
+.logo-title{font-weight:700;font-size:15px;color:#111}
+.logo-sub{font-size:11px;color:#888}
+.hdr-right{display:flex;align-items:center;gap:8px}
+.bell-btn{position:relative;background:none;border:none;cursor:pointer;padding:4px;font-size:22px}
+.bell-badge{position:absolute;top:0;right:0;background:#E24B4A;color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tabs{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:8px 13px;border:none;background:none;font-size:12px;color:#666;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap}
+.tab.on{font-weight:700;color:#185FA5;border-bottom-color:#185FA5}
+.pg{display:none;padding:16px;max-width:680px;margin:0 auto}
+.pg.on{display:block}
+.ptitle{font-size:20px;font-weight:700;color:#111;margin-bottom:16px}
+.prow{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.prow .ptitle{margin:0}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.stat{border-radius:14px;padding:14px 16px}
+.pill{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;display:inline-block;white-space:nowrap;margin-right:4px;margin-bottom:2px}
+.btn{cursor:pointer;border:1px solid #ccc;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:500;background:#fff;color:#333;transition:opacity .1s}
+.btn:active{opacity:.7}
+.btn.p{background:#185FA5;color:#fff;border:none}
+.btn.d{background:#E24B4A;color:#fff;border:none}
+.btn.g{background:#3B6D11;color:#fff;border:none}
+.btn.sm{padding:5px 12px;font-size:12px}
+.btn.full{width:100%;display:block}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:flex-end}
+.sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-height:92vh;overflow-y:auto;padding:20px 16px 50px;-webkit-overflow-scrolling:touch}
+.shand{width:40px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 16px}
+.shdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.stit{font-weight:700;font-size:17px;color:#111}
+.xb{background:#f0f0f0;border:none;border-radius:50%;width:32px;height:32px;font-size:20px;cursor:pointer;color:#555;flex-shrink:0}
+.flbl{font-size:12px;color:#666;display:block;margin-bottom:4px;margin-top:12px}
+input,select,textarea{width:100%;border:1px solid #ccc;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;color:#111;-webkit-appearance:none;appearance:none}
+input[type=date]{font-size:14px}
+textarea{resize:vertical}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.fb{padding:5px 12px;border-radius:20px;border:1px solid #ccc;background:#fff;color:#555;font-size:12px;cursor:pointer}
+.fb.on{background:#185FA5;color:#fff;border-color:#185FA5}
+.empty{text-align:center;padding:3rem 1rem;color:#aaa;font-size:14px}
+.sg{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.skb{padding:6px 12px;border-radius:20px;border:1px solid #ccc;background:#fff;color:#555;font-size:13px;cursor:pointer}
+.skb.on{background:#185FA5;color:#fff;border-color:#185FA5}
+.hid{display:none}
+.alrt{border-left:4px solid #E24B4A;padding:12px 16px;background:#fff;border-radius:8px;margin-bottom:12px}
+.fg{display:flex;gap:8px;margin-top:16px}
+.mr{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f0f0f0;margin-top:8px;gap:8px}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.spin{display:flex;align-items:center;justify-content:center;min-height:100vh;font-size:14px;color:#888;flex-direction:column;gap:8px}
+.login-wrap{min-height:100vh;background:#f5f5f7;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{width:100%;max-width:380px}
+.login-logo{text-align:center;margin-bottom:32px}
+.r2{display:flex;gap:8px}
+.r2>*{flex:1}
+.sec-title{font-size:15px;font-weight:700;margin-bottom:12px}
+.ci{font-size:12px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0}
+.notif-item{padding:10px 0;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;gap:8px}
+.rep-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f5f5;font-size:13px}
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-status-bar-style" content="default"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="apple-mobile-web-app-title" content="Love Our Leaders"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="theme-color" content="#185FA5"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;title&gt;Love Our Leaders&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1">*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}</span></p>
-<p class="p1"><span class="s1">body{background:#f5f5f7;min-height:100vh;overscroll-behavior:none}</span></p>
-<p class="p1"><span class="s1">.hdr{background:#fff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:100;padding:12px 16px 0}</span></p>
-<p class="p1"><span class="s1">.logo-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}</span></p>
-<p class="p1"><span class="s1">.logo-left{display:flex;align-items:center;gap:10px}</span></p>
-<p class="p1"><span class="s1">.logo-icon{width:32px;height:32px;border-radius:50%;background:#FAECE7;display:flex;align-items:center;justify-content:center;color:#993C1D;font-size:18px;flex-shrink:0}</span></p>
-<p class="p1"><span class="s1">.logo-title{font-weight:700;font-size:15px;color:#111}</span></p>
-<p class="p1"><span class="s1">.logo-sub{font-size:11px;color:#888}</span></p>
-<p class="p1"><span class="s1">.hdr-right{display:flex;align-items:center;gap:8px}</span></p>
-<p class="p1"><span class="s1">.bell-btn{position:relative;background:none;border:none;cursor:pointer;padding:4px;font-size:22px}</span></p>
-<p class="p1"><span class="s1">.bell-badge{position:absolute;top:0;right:0;background:#E24B4A;color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}</span></p>
-<p class="p1"><span class="s1">.tabs{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}</span></p>
-<p class="p1"><span class="s1">.tabs::-webkit-scrollbar{display:none}</span></p>
-<p class="p1"><span class="s1">.tab{flex-shrink:0;padding:8px 13px;border:none;background:none;font-size:12px;color:#666;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap}</span></p>
-<p class="p1"><span class="s1">.tab.on{font-weight:700;color:#185FA5;border-bottom-color:#185FA5}</span></p>
-<p class="p1"><span class="s1">.pg{display:none;padding:16px;max-width:680px;margin:0 auto}</span></p>
-<p class="p1"><span class="s1">.pg.on{display:block}</span></p>
-<p class="p1"><span class="s1">.ptitle{font-size:20px;font-weight:700;color:#111;margin-bottom:16px}</span></p>
-<p class="p1"><span class="s1">.prow{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}</span></p>
-<p class="p1"><span class="s1">.prow .ptitle{margin:0}</span></p>
-<p class="p1"><span class="s1">.card{background:#fff;border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;margin-bottom:10px}</span></p>
-<p class="p1"><span class="s1">.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}</span></p>
-<p class="p1"><span class="s1">.stat{border-radius:14px;padding:14px 16px}</span></p>
-<p class="p1"><span class="s1">.pill{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;display:inline-block;white-space:nowrap;margin-right:4px;margin-bottom:2px}</span></p>
-<p class="p1"><span class="s1">.btn{cursor:pointer;border:1px solid #ccc;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:500;background:#fff;color:#333;transition:opacity .1s}</span></p>
-<p class="p1"><span class="s1">.btn:active{opacity:.7}</span></p>
-<p class="p1"><span class="s1">.btn.p{background:#185FA5;color:#fff;border:none}</span></p>
-<p class="p1"><span class="s1">.btn.d{background:#E24B4A;color:#fff;border:none}</span></p>
-<p class="p1"><span class="s1">.btn.g{background:#3B6D11;color:#fff;border:none}</span></p>
-<p class="p1"><span class="s1">.btn.sm{padding:5px 12px;font-size:12px}</span></p>
-<p class="p1"><span class="s1">.btn.full{width:100%;display:block}</span></p>
-<p class="p1"><span class="s1">.ov{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:flex-end}</span></p>
-<p class="p1"><span class="s1">.sheet{background:#fff;border-radius:20px 20px 0 0;width:100%;max-height:92vh;overflow-y:auto;padding:20px 16px 50px;-webkit-overflow-scrolling:touch}</span></p>
-<p class="p1"><span class="s1">.shand{width:40px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 16px}</span></p>
-<p class="p1"><span class="s1">.shdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}</span></p>
-<p class="p1"><span class="s1">.stit{font-weight:700;font-size:17px;color:#111}</span></p>
-<p class="p1"><span class="s1">.xb{background:#f0f0f0;border:none;border-radius:50%;width:32px;height:32px;font-size:20px;cursor:pointer;color:#555;flex-shrink:0}</span></p>
-<p class="p1"><span class="s1">.flbl{font-size:12px;color:#666;display:block;margin-bottom:4px;margin-top:12px}</span></p>
-<p class="p1"><span class="s1">input,select,textarea{width:100%;border:1px solid #ccc;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;color:#111;-webkit-appearance:none;appearance:none}</span></p>
-<p class="p1"><span class="s1">input[type=date]{font-size:14px}</span></p>
-<p class="p1"><span class="s1">textarea{resize:vertical}</span></p>
-<p class="p1"><span class="s1">select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}</span></p>
-<p class="p1"><span class="s1">.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}</span></p>
-<p class="p1"><span class="s1">.fb{padding:5px 12px;border-radius:20px;border:1px solid #ccc;background:#fff;color:#555;font-size:12px;cursor:pointer}</span></p>
-<p class="p1"><span class="s1">.fb.on{background:#185FA5;color:#fff;border-color:#185FA5}</span></p>
-<p class="p1"><span class="s1">.empty{text-align:center;padding:3rem 1rem;color:#aaa;font-size:14px}</span></p>
-<p class="p1"><span class="s1">.sg{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}</span></p>
-<p class="p1"><span class="s1">.skb{padding:6px 12px;border-radius:20px;border:1px solid #ccc;background:#fff;color:#555;font-size:13px;cursor:pointer}</span></p>
-<p class="p1"><span class="s1">.skb.on{background:#185FA5;color:#fff;border-color:#185FA5}</span></p>
-<p class="p1"><span class="s1">.hid{display:none}</span></p>
-<p class="p1"><span class="s1">.alrt{border-left:4px solid #E24B4A;padding:12px 16px;background:#fff;border-radius:8px;margin-bottom:12px}</span></p>
-<p class="p1"><span class="s1">.fg{display:flex;gap:8px;margin-top:16px}</span></p>
-<p class="p1"><span class="s1">.mr{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid #f0f0f0;margin-top:8px;gap:8px}</span></p>
-<p class="p1"><span class="s1">.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}</span></p>
-<p class="p1"><span class="s1">.spin{display:flex;align-items:center;justify-content:center;min-height:100vh;font-size:14px;color:#888;flex-direction:column;gap:8px}</span></p>
-<p class="p1"><span class="s1">.login-wrap{min-height:100vh;background:#f5f5f7;display:flex;align-items:center;justify-content:center;padding:20px}</span></p>
-<p class="p1"><span class="s1">.login-box{width:100%;max-width:380px}</span></p>
-<p class="p1"><span class="s1">.login-logo{text-align:center;margin-bottom:32px}</span></p>
-<p class="p1"><span class="s1">.r2{display:flex;gap:8px}</span></p>
-<p class="p1"><span class="s1">.r2&gt;*{flex:1}</span></p>
-<p class="p1"><span class="s1">.sec-title{font-size:15px;font-weight:700;margin-bottom:12px}</span></p>
-<p class="p1"><span class="s1">.ci{font-size:12px;color:#666;margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0}</span></p>
-<p class="p1"><span class="s1">.notif-item{padding:10px 0;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;gap:8px}</span></p>
-<p class="p1"><span class="s1">.rep-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f5f5f5;font-size:13px}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;div id="app"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1">const SUPA_URL="https://bkmkhifesilhqciljygd.supabase.co";</span></p>
-<p class="p1"><span class="s1">const SUPA_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrbWtoaWZlc2lsaHFjaWxqeWdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODM5MTgsImV4cCI6MjA5MzA1OTkxOH0.i33mQqzMAbmBaRasATQ2TNR9HXFAn3k0EAZqB4tBCKk";</span></p>
-<p class="p1"><span class="s1">const SKILLS=["Cooking","Carpentry","Plumbing","Electrical","Childcare","Landscaping","Cleaning","Transportation","Counseling","Music","Technology","Finance","Medical","Legal","Teaching","Photography","Design","Other"];</span></p>
-<p class="p1"><span class="s1">const CONTACT_TYPES=["In-person meeting","Phone call","Text check-in","Email","Other"];</span></p>
-<p class="p1"><span class="s1">const NEED_LEVELS=["Advocate-handled","Needs leadership"];</span></p>
-<p class="p1"><span class="s1">const STATUS_OPTS=["New","Under Review","In Progress","Fulfilled","Closed"];</span></p>
-<p class="p1"><span class="s1">const STATUS_COLORS={New:["#dbeafe","#1e40af"],"Under Review":["#fef3c7","#92400e"],"In Progress":["#ede9fe","#4c1d95"],Fulfilled:["#dcfce7","#14532d"],Closed:["#f3f4f6","#555"]};</span></p>
-<p class="p1"><span class="s1">const NLC={"Advocate-handled":["#dcfce7","#14532d"],"Needs leadership":["#fee2e2","#7f1d1d"]};</span></p>
-<p class="p1"><span class="s1">const SKILL_SYNONYMS={Cooking:["cook","meal","food","dinner","lunch","breakfast","bake","baking","kitchen","recipe","groceries","catering"],Carpentry:["carpentry","wood","build","building","repair","fix","cabinet","furniture","shelf","deck","fence","framing","trim","door","window"],Plumbing:["plumb","pipe","leak","drain","faucet","toilet","water","sink","shower","clog","flood"],Electrical:["electric","wire","wiring","outlet","light","fixture","breaker","switch","power","lamp"],Childcare:["child","kid","baby","babysit","toddler","infant","daycare","children","watching kids"],Landscaping:["landscape","garden","gardening","yard","lawn","mow","mowing","plant","planting","flower","tree","bush","shrub","mulch","weed","rake","grass","outdoor"],Cleaning:["clean","cleaning","housekeep","tidy","sweep","mop","vacuum","laundry","dishes","sanitize","organize"],Transportation:["transport","drive","driving","ride","car","vehicle","errand","pickup","airport","move","moving","truck"],Counseling:["counsel","counseling","support","mentor","advice","guidance","grief","stress","anxiety","depression","mental health"],Music:["music","sing","singing","song","instrument","guitar","piano","keyboard","drums","worship","choir"],Technology:["tech","technology","computer","phone","internet","wifi","network","printer","software","app","website","device","tablet","laptop","setup","troubleshoot"],Finance:["financ","money","budget","tax","taxes","accounting","bookkeep","bills","debt","savings","invest","insurance","filing","irs","bank"],Medical:["medical","health","doctor","nurse","hospital","appointment","medicine","prescription","therapy","wheelchair","recovery","surgery"],Legal:["legal","law","lawyer","attorney","document","contract","court","notary","lease","immigration","paperwork"],Teaching:["teach","teaching","tutor","tutoring","homework","school","class","lesson","study","education","reading","math","writing"],Photography:["photo","photograph","picture","camera","video","film","shoot","portrait","memory","event"],Design:["design","graphic","logo","flyer","banner","art","creative","print","poster","canva"],Other:[]};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2);}</span></p>
-<p class="p1"><span class="s1">function esc(s){return(s||"").replace(/&amp;/g,"&amp;amp;").replace(/&lt;/g,"&amp;lt;").replace(/&gt;/g,"&amp;gt;");}</span></p>
-<p class="p1"><span class="s1">function pill(t,bg,c){return`&lt;span class="pill" style="background:${bg};color:${c}"&gt;${esc(t)}&lt;/span&gt;`;}</span></p>
-<p class="p1"><span class="s1">function av(n,sz,bg,tc){var i=(n||"?").split(" ").map(w=&gt;w[0]||"").slice(0,2).join("").toUpperCase();return`&lt;div class="av" style="width:${sz}px;height:${sz}px;background:${bg};color:${tc};font-size:${Math.floor(sz*0.33)}px"&gt;${i}&lt;/div&gt;`;}</span></p>
-<p class="p1"><span class="s1">function spill(s){return s?STATUS_COLORS[s]||["#eee","#333"]:["#eee","#333"];}</span></p>
-<p class="p1"><span class="s1">function matchSkills(desc,skills){var d=(desc||"").toLowerCase(),out=[];for(var sk of(skills||[])){var syns=SKILL_SYNONYMS[sk]||[sk.toLowerCase()];if(syns.some(s=&gt;d.includes(s)))out.push(sk);}return out;}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">async function db(method,table,body,params){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var url=`${SUPA_URL}/rest/v1/${table}`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(params)url+=`?${params}`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var opts={method,headers:{"Content-Type":"application/json","apikey":SUPA_KEY,"Authorization":"Bearer "+SUPA_KEY,"Prefer":"return=representation"}};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(body)opts.body=JSON.stringify(body);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var r=await fetch(url,opts);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!r.ok){var e=await r.text();throw new Error(e);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var txt=await r.text();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return txt?JSON.parse(txt):[];</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">var api={</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>get:async(t,q)=&gt;db("GET",t,null,q||"select=*"),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>insert:async(t,row)=&gt;db("POST",t,row),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>update:async(t,id,row)=&gt;db("PATCH",t,row,`id=eq.${id}`),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>delete:async(t,id)=&gt;db("DELETE",t,null,`id=eq.${id}`),</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var S={ready:false,users:[],currentUser:null,tab:"dashboard",leaders:[],advocates:[],members:[],meetings:[],requests:[],notifs:[],customSkills:[],sheet:null,sheetData:{}};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">async function loadAll(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("app").innerHTML=`&lt;div class="spin"&gt;&lt;div&gt;♥&lt;/div&gt;&lt;div&gt;Loading Love Our Leaders...&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>try{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var[users,leaders,advocates,members,meetings,requests,notifs,cs]=await Promise.all([</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>api.get("users"),api.get("leaders"),api.get("advocates"),api.get("members"),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>api.get("meetings","select=*&amp;order=created_at.desc"),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>api.get("requests","select=*&amp;order=created_at.desc"),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>api.get("notifications","select=*&amp;order=created_at.desc"),</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>api.get("custom_skills")</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>S.users=users||[];S.leaders=leaders||[];S.advocates=advocates||[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>S.members=members||[];S.meetings=meetings||[];S.requests=requests||[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>S.notifs=notifs||[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if(cs&amp;&amp;cs.length){S.customSkills=cs.map(r=&gt;r.skill);cs.forEach(r=&gt;{if(!SKILLS.includes(r.skill))SKILLS.push(r.skill);});}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>S.ready=true;render();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}catch(e){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("app").innerHTML=`&lt;div class="spin"&gt;&lt;div&gt;⚠️ Could not connect to database.&lt;/div&gt;&lt;div style="font-size:12px;color:#aaa;margin-top:8px;max-width:300px;text-align:center"&gt;${e.message}&lt;/div&gt;&lt;button class="btn p" onclick="loadAll()" style="margin-top:16px"&gt;Retry&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function render(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var app=document.getElementById("app");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!S.ready){app.innerHTML=`&lt;div class="spin"&gt;&lt;div&gt;♥&lt;/div&gt;&lt;div&gt;Loading Love Our Leaders...&lt;/div&gt;&lt;/div&gt;`;return;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!S.users.length){app.innerHTML=renderSetup();attachSetup();return;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!S.currentUser){app.innerHTML=renderLogin();attachLogin();return;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>app.innerHTML=renderApp();attachApp();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderSetup(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var rows="";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(var i=0;i&lt;2;i++)rows+=`&lt;div style="margin-bottom:16px;padding-bottom:16px;border-bottom:${i===0?"1px solid #f0f0f0":"none"}"&gt;&lt;div style="font-size:13px;font-weight:600;color:#333;margin-bottom:8px"&gt;Admin ${i+1}&lt;/div&gt;&lt;label class="flbl"&gt;Full name&lt;/label&gt;&lt;input id="su-name-${i}" placeholder="Your name"&gt;&lt;label class="flbl"&gt;PIN (min 4 digits)&lt;/label&gt;&lt;input id="su-pin-${i}" type="password" placeholder="Create a PIN" inputmode="numeric"&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var arows="";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>for(var i=0;i&lt;7;i++)arows+=`&lt;div style="margin-bottom:16px;padding-bottom:16px;border-bottom:${i&lt;6?"1px solid #f0f0f0":"none"}"&gt;&lt;div style="font-size:13px;font-weight:600;color:#333;margin-bottom:8px"&gt;Advocate ${i+1}&lt;/div&gt;&lt;label class="flbl"&gt;Full name&lt;/label&gt;&lt;input id="su-name-a${i}" placeholder="Advocate name"&gt;&lt;label class="flbl"&gt;PIN (min 4 digits)&lt;/label&gt;&lt;input id="su-pin-a${i}" type="password" placeholder="Create a PIN" inputmode="numeric"&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div style="background:#f5f5f7;min-height:100vh;padding:20px"&gt;&lt;div style="max-width:500px;margin:0 auto"&gt;&lt;div style="text-align:center;margin-bottom:24px"&gt;&lt;div style="font-size:40px"&gt;♥&lt;/div&gt;&lt;div style="font-size:22px;font-weight:700;color:#111"&gt;Love Our Leaders&lt;/div&gt;&lt;div style="font-size:14px;color:#666;margin-top:4px"&gt;First-time setup&lt;/div&gt;&lt;/div&gt;&lt;div class="card"&gt;&lt;div class="sec-title" style="color:#185FA5"&gt;Admins / Managers&lt;/div&gt;${rows}&lt;/div&gt;&lt;div class="card" style="margin-top:12px"&gt;&lt;div class="sec-title" style="color:#3B6D11"&gt;Advocates&lt;/div&gt;${arows}&lt;/div&gt;&lt;button class="btn p full" id="su-submit" style="margin-top:16px;padding:14px;font-size:15px"&gt;Complete Setup&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function attachSetup(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("su-submit").onclick=async function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var users=[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for(var i=0;i&lt;2;i++){var n=document.getElementById(`su-name-${i}`).value.trim(),p=document.getElementById(`su-pin-${i}`).value.trim();if(!n||p.length&lt;4){alert("All names and PINs (min 4 digits) required.");return;}users.push({id:uid(),name:n,pin:p,role:"admin"});}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>for(var i=0;i&lt;7;i++){var n=document.getElementById(`su-name-a${i}`).value.trim(),p=document.getElementById(`su-pin-a${i}`).value.trim();if(!n||p.length&lt;4){alert("All names and PINs (min 4 digits) required.");return;}users.push({id:uid(),name:n,pin:p,role:"advocate"});}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>var pins=users.map(u=&gt;u.pin);if(new Set(pins).size!==pins.length){alert("Each person must have a unique PIN.");return;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("su-submit").textContent="Setting up...";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>try{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(var u of users)await api.insert("users",u);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(var a of users.filter(u=&gt;u.role==="advocate"))await api.insert("advocates",{id:a.id,name:a.name,user_id:a.id});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>await loadAll();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}catch(e){alert("Setup error: "+e.message);document.getElementById("su-submit").textContent="Complete Setup";}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderLogin(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var opts=S.users.map(u=&gt;`&lt;option value="${u.id}"&gt;${esc(u.name)} (${u.role==="admin"?"Admin":"Advocate"})&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="login-wrap"&gt;&lt;div class="login-box"&gt;&lt;div class="login-logo"&gt;&lt;div style="font-size:48px"&gt;♥&lt;/div&gt;&lt;div style="font-size:24px;font-weight:700;color:#111"&gt;Love Our Leaders&lt;/div&gt;&lt;div style="font-size:14px;color:#888;margin-top:4px"&gt;Sign in to continue&lt;/div&gt;&lt;/div&gt;&lt;div class="card"&gt;&lt;label class="flbl"&gt;Who are you?&lt;/label&gt;&lt;select id="li-sel"&gt;&lt;option value=""&gt;-- Select your name --&lt;/option&gt;${opts}&lt;/select&gt;&lt;div id="li-pin-area" class="hid"&gt;&lt;label class="flbl" style="margin-top:12px"&gt;Enter your PIN&lt;/label&gt;&lt;input id="li-pin" type="password" inputmode="numeric" placeholder="PIN"&gt;&lt;div id="li-err" style="color:#E24B4A;font-size:13px;margin-top:6px;display:none"&gt;&lt;/div&gt;&lt;button class="btn p full" id="li-btn" style="margin-top:12px;padding:12px"&gt;Sign In&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="text-align:center;margin-top:16px"&gt;&lt;button id="li-forgot" style="background:none;border:none;color:#185FA5;font-size:13px;cursor:pointer;text-decoration:underline"&gt;Forgot PIN? Contact an admin&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function attachLogin(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("li-sel").onchange=function(){document.getElementById("li-pin-area").classList.toggle("hid",!this.value);document.getElementById("li-pin").value="";document.getElementById("li-err").style.display="none";};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("li-btn").onclick=function(){var uid=document.getElementById("li-sel").value,pin=document.getElementById("li-pin").value,u=S.users.find(x=&gt;x.id===uid);if(!u)return;if(u.pin===pin){S.currentUser=u;S.tab="dashboard";render();}else{var e=document.getElementById("li-err");e.textContent="Incorrect PIN. Please try again.";e.style.display="block";document.getElementById("li-pin").value="";}};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("li-pin").onkeydown=function(e){if(e.key==="Enter")document.getElementById("li-btn").click();};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>document.getElementById("li-forgot").onclick=function(){var admins=S.users.filter(u=&gt;u.role==="admin").map(u=&gt;`&lt;div style="font-size:14px;font-weight:500;color:#111"&gt;${esc(u.name)}&lt;/div&gt;`).join("");openSheet("PIN Reset",`&lt;div style="font-size:14px;color:#555;line-height:1.6;margin-bottom:16px"&gt;Contact an admin to reset your PIN via &lt;strong&gt;Settings → Manage PINs&lt;/strong&gt;.&lt;/div&gt;&lt;div style="background:#f5f5f7;border-radius:8px;padding:12px;margin-bottom:16px"&gt;&lt;div style="font-size:12px;color:#888;margin-bottom:6px"&gt;Your admins are:&lt;/div&gt;${admins}&lt;/div&gt;&lt;button class="btn p full" onclick="closeSheet()"&gt;Got it&lt;/button&gt;`);};</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderApp(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var tabs=isAdmin?["dashboard","leaders","advocates","meetings","requests","members","matching","reports","settings"]:["dashboard","meetings","requests"];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var labels=isAdmin?["Home","Leaders","Advocates","Meetings","Requests","Members","Matching","Reports","Settings"]:["Home","My Meetings","My Requests"];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var myNotifs=S.notifs.filter(n=&gt;n.for_user_id===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var unread=myNotifs.length;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var badge=unread&gt;0?`&lt;div class="bell-badge"&gt;${unread}&lt;/div&gt;`:"";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var tabHtml=tabs.map((t,i)=&gt;`&lt;button class="tab${S.tab===t?" on":""}" onclick="goTab('${t}')"&gt;${labels[i]}&lt;/button&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var sheetHtml=S.sheet?`&lt;div class="ov" id="overlay" onclick="overlayClick(event)"&gt;&lt;div class="sheet"&gt;&lt;div class="shand"&gt;&lt;/div&gt;&lt;div class="shdr"&gt;&lt;div class="stit"&gt;${esc(S.sheet)}&lt;/div&gt;&lt;button class="xb" onclick="closeSheet()"&gt;×&lt;/button&gt;&lt;/div&gt;&lt;div id="sheet-body"&gt;${S.sheetData.body||""}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`:"";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="hdr"&gt;&lt;div class="logo-row"&gt;&lt;div class="logo-left"&gt;&lt;div class="logo-icon"&gt;♥&lt;/div&gt;&lt;div&gt;&lt;div class="logo-title"&gt;Love Our Leaders&lt;/div&gt;&lt;div class="logo-sub"&gt;${esc(u.name)} · ${isAdmin?"Admin":"Advocate"}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hdr-right"&gt;&lt;button class="bell-btn" onclick="openNotifs()"&gt;🔔${badge}&lt;/button&gt;&lt;button class="btn sm" onclick="logout()"&gt;Log out&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="tabs"&gt;${tabHtml}&lt;/div&gt;&lt;/div&gt;&lt;div style="padding-bottom:32px"&gt;&lt;div id="pg-content"&gt;&lt;div class="spin"&gt;Loading...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;${sheetHtml}`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function attachApp(){loadPageContent();if(S.sheet&amp;&amp;S.sheetData.attachFn)S.sheetData.attachFn();}</span></p>
-<p class="p1"><span class="s1">function goTab(t){S.tab=t;S.sheet=null;render();}</span></p>
-<p class="p1"><span class="s1">function logout(){S.currentUser=null;S.sheet=null;render();}</span></p>
-<p class="p1"><span class="s1">function overlayClick(e){if(e.target.id==="overlay")closeSheet();}</span></p>
-<p class="p1"><span class="s1">function openSheet(title,body,attachFn){S.sheet=title;S.sheetData={body,attachFn};render();}</span></p>
-<p class="p1"><span class="s1">function closeSheet(){S.sheet=null;S.sheetData={};render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function loadPageContent(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var el=document.getElementById("pg-content");if(!el)return;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var isAdmin=S.currentUser.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>switch(S.tab){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"dashboard":el.innerHTML=renderDash();break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"leaders":if(isAdmin){el.innerHTML=renderLeaders();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"advocates":if(isAdmin){el.innerHTML=renderAdvocates();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"meetings":el.innerHTML=renderMeetings();break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"requests":el.innerHTML=renderRequests();break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"members":if(isAdmin){el.innerHTML=renderMembers();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"matching":if(isAdmin){el.innerHTML=renderMatching();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"reports":if(isAdmin){el.innerHTML=renderReports();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>case"settings":if(isAdmin){el.innerHTML=renderSettings();}break;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">async function addNotif(forUserId,title,body){var n={id:uid(),for_user_id:forUserId,for_role:null,title,body,created_at:new Date().toISOString()};await api.insert("notifications",n);S.notifs.unshift(n);}</span></p>
-<p class="p1"><span class="s1">function openNotifs(){var u=S.currentUser;var mine=S.notifs.filter(n=&gt;n.for_user_id===u.id);var body=mine.length?mine.map(n=&gt;`&lt;div class="notif-item"&gt;&lt;div&gt;&lt;div style="font-size:13px;font-weight:500;color:#111"&gt;${esc(n.title)}&lt;/div&gt;&lt;div style="font-size:12px;color:#666;margin-top:2px"&gt;${esc(n.body)}&lt;/div&gt;&lt;div style="font-size:11px;color:#aaa;margin-top:2px"&gt;${new Date(n.created_at).toLocaleString()}&lt;/div&gt;&lt;/div&gt;&lt;button class="btn sm d" onclick="clearNotif('${n.id}')"&gt;×&lt;/button&gt;&lt;/div&gt;`).join("")+`&lt;button class="btn d full" style="margin-top:16px" onclick="clearAllNotifs()"&gt;Clear all&lt;/button&gt;`:`&lt;div style="text-align:center;padding:2rem 0;color:#aaa;font-size:13px"&gt;No new notifications.&lt;/div&gt;`;openSheet("Notifications",body);}</span></p>
-<p class="p1"><span class="s1">async function clearNotif(id){await api.delete("notifications",id);S.notifs=S.notifs.filter(n=&gt;n.id!==id);openNotifs();}</span></p>
-<p class="p1"><span class="s1">async function clearAllNotifs(){var u=S.currentUser;var mine=S.notifs.filter(n=&gt;n.for_user_id===u.id);for(var n of mine)await api.delete("notifications",n.id);S.notifs=S.notifs.filter(n=&gt;n.for_user_id!==u.id);closeSheet();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderDash(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var vReqs=isAdmin?S.requests:S.requests.filter(r=&gt;r.submitted_by===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var vMeets=isAdmin?S.meetings:S.meetings.filter(m=&gt;m.advocate_id===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var open=vReqs.filter(r=&gt;r.status==="New"||r.status==="Under Review");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var ful=vReqs.filter(r=&gt;r.status==="Fulfilled");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var pray=vReqs.filter(r=&gt;r.type==="Prayer");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var mo=new Date().toISOString().slice(0,7);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var mmo=vMeets.filter(m=&gt;(m.date||"").startsWith(mo));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var unassigned=S.leaders.filter(l=&gt;!l.advocate_id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var stats=isAdmin?[["Leaders",S.leaders.length,"#dbeafe","#1e40af"],["Advocates",S.advocates.length,"#d1fae5","#065f46"],["Open requests",open.length,"#fef3c7","#92400e"],["Fulfilled",ful.length,"#dcfce7","#14532d"],["Prayer",pray.length,"#ede9fe","#4c1d95"],["Meetings/mo",mmo.length,"#fee2e2","#7f1d1d"]]:[["My meetings",vMeets.length,"#dbeafe","#1e40af"],["Open requests",open.length,"#fef3c7","#92400e"],["Fulfilled",ful.length,"#dcfce7","#14532d"],["Prayer",pray.length,"#ede9fe","#4c1d95"]];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var statHtml=stats.map(s=&gt;`&lt;div class="stat" style="background:${s[2]}"&gt;&lt;div style="font-size:26px;font-weight:700;color:${s[3]}"&gt;${s[1]}&lt;/div&gt;&lt;div style="font-size:12px;color:${s[3]};margin-top:2px"&gt;${s[0]}&lt;/div&gt;&lt;/div&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var alertHtml=isAdmin&amp;&amp;unassigned.length?`&lt;div class="alrt"&gt;&lt;div style="font-weight:700;color:#A32D2D;font-size:13px;margin-bottom:4px"&gt;Leaders without advocate (${unassigned.length})&lt;/div&gt;${unassigned.map(l=&gt;`&lt;div style="font-size:13px;color:#555"&gt;${esc(l.name)} — ${esc(l.role||"")}&lt;/div&gt;`).join("")}&lt;/div&gt;`:"";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var reqHtml=open.slice(0,5).map(r=&gt;{var sp=spill(r.status);return`&lt;div class="card"&gt;${pill(r.type,r.type==="Prayer"?"#ede9fe":"#dbeafe",r.type==="Prayer"?"#4c1d95":"#1e40af")}${pill(r.status,sp[0],sp[1])}&lt;div style="font-weight:600;font-size:13px;color:#111;margin-top:4px"&gt;${esc(r.leader_name||"")}&lt;/div&gt;&lt;div style="font-size:13px;color:#666;margin-top:2px"&gt;${esc((r.description||"").slice(0,90))}&lt;/div&gt;&lt;/div&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="ptitle"&gt;Dashboard&lt;/div&gt;&lt;div class="g2"&gt;${statHtml}&lt;/div&gt;${alertHtml}${reqHtml}${!open.length?'&lt;div class="empty"&gt;All caught up! No open requests.&lt;/div&gt;':""}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderLeaders(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=S.leaders.map(l=&gt;{var adv=S.advocates.find(a=&gt;a.id===l.advocate_id);var mc=S.meetings.filter(m=&gt;m.leader_id===l.id).length;var rc=S.requests.filter(r=&gt;r.leader_id===l.id&amp;&amp;(r.status==="New"||r.status==="Under Review")).length;return`&lt;div class="card"&gt;&lt;div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"&gt;&lt;div style="display:flex;gap:10px;align-items:center"&gt;${av(l.name,36,"#B5D4F4","#185FA5")}&lt;div&gt;&lt;div style="font-weight:700;font-size:14px;color:#111"&gt;${esc(l.name)}&lt;/div&gt;&lt;div style="font-size:12px;color:#666"&gt;${esc(l.role||"")}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="display:flex;gap:6px"&gt;&lt;button class="btn sm" onclick="editLeader('${l.id}')"&gt;Edit&lt;/button&gt;&lt;button class="btn sm d" onclick="delLeader('${l.id}')"&gt;Del&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="ci"&gt;Advocate: ${adv?`&lt;strong&gt;${esc(adv.name)}&lt;/strong&gt;`:`&lt;span style="color:#A32D2D"&gt;Unassigned&lt;/span&gt;`} · Meetings: ${mc} · Open: ${rc}&lt;/div&gt;&lt;/div&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;Leaders&lt;/div&gt;&lt;button class="btn p" onclick="openLeaderSheet(null)"&gt;+ Add&lt;/button&gt;&lt;/div&gt;${html||'&lt;div class="empty"&gt;No leaders yet.&lt;/div&gt;'}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function openLeaderSheet(l){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var advOpts=S.advocates.map(a=&gt;`&lt;option value="${a.id}"${l&amp;&amp;l.advocate_id===a.id?" selected":""}&gt;${esc(a.name)}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;Full name *&lt;/label&gt;&lt;input id="lf-name" value="${esc(l?l.name:"")}"&gt;&lt;label class="flbl"&gt;Role&lt;/label&gt;&lt;input id="lf-role" value="${esc(l?l.role||"":"")}"&gt;&lt;label class="flbl"&gt;Email&lt;/label&gt;&lt;input id="lf-email" type="email" value="${esc(l?l.email||":"")}"&gt;&lt;label class="flbl"&gt;Phone&lt;/label&gt;&lt;input id="lf-phone" value="${esc(l?l.phone||":"")}"&gt;&lt;label class="flbl"&gt;Assigned advocate&lt;/label&gt;&lt;select id="lf-adv"&gt;&lt;option value=""&gt;-- Select --&lt;/option&gt;${advOpts}&lt;/select&gt;&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="lf-save" style="flex:2"&gt;${l?"Save":"Add leader"}&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(l?"Edit leader":"Add leader",body,function(){document.getElementById("lf-save").onclick=async function(){var name=document.getElementById("lf-name").value.trim();if(!name)return alert("Name required.");var row={name,role:document.getElementById("lf-role").value,email:document.getElementById("lf-email").value,phone:document.getElementById("lf-phone").value,advocate_id:document.getElementById("lf-adv").value||null};if(l){await api.update("leaders",l.id,row);Object.assign(S.leaders.find(x=&gt;x.id===l.id),row);}else{row.id=uid();row.created_at=new Date().toISOString();await api.insert("leaders",row);S.leaders.push(row);}closeSheet();S.tab="leaders";render();};});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function editLeader(id){openLeaderSheet(S.leaders.find(l=&gt;l.id===id));}</span></p>
-<p class="p1"><span class="s1">async function delLeader(id){if(!confirm("Delete this leader?"))return;await api.delete("leaders",id);S.leaders=S.leaders.filter(x=&gt;x.id!==id);render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderAdvocates(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=S.advocates.map(a=&gt;{var lnames=S.leaders.filter(l=&gt;l.advocate_id===a.id).map(l=&gt;l.name);var mc=S.meetings.filter(m=&gt;m.advocate_id===a.id).length;return`&lt;div class="card"&gt;&lt;div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"&gt;&lt;div style="display:flex;gap:10px;align-items:center"&gt;${av(a.name,36,"#9FE1CB","#065f46")}&lt;div&gt;&lt;div style="font-weight:700;font-size:14px;color:#111"&gt;${esc(a.name)}&lt;/div&gt;&lt;div style="font-size:12px;color:#666"&gt;Serving: ${lnames.length?esc(lnames.join(", ")):"No leader assigned"}&lt;/div&gt;&lt;div style="font-size:12px;color:#888"&gt;Meetings: ${mc}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="display:flex;gap:6px"&gt;&lt;button class="btn sm" onclick="openAdvSheet('${a.id}')"&gt;Edit&lt;/button&gt;&lt;button class="btn sm d" onclick="delAdvocate('${a.id}')"&gt;Del&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;Advocates&lt;/div&gt;&lt;button class="btn p" onclick="openAdvSheet(null)"&gt;+ Add&lt;/button&gt;&lt;/div&gt;&lt;div style="font-size:13px;color:#666;margin-bottom:16px"&gt;Edit, add, or remove advocates here.&lt;/div&gt;${html||'&lt;div class="empty"&gt;No advocates yet.&lt;/div&gt;'}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function openAdvSheet(id){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var a=id?S.advocates.find(x=&gt;x.id===id):null;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;Full name *&lt;/label&gt;&lt;input id="af-name" value="${esc(a?a.name:"")}"&gt;&lt;label class="flbl"&gt;${a?"":"PIN (min 4 digits) *"}&lt;/label&gt;${a?`&lt;div style="font-size:12px;color:#888;margin-top:4px"&gt;To reset PIN use Settings → Manage PINs.&lt;/div&gt;`:`&lt;input id="af-pin" type="password" inputmode="numeric" placeholder="Create a unique PIN"&gt;`}&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="af-save" style="flex:2"&gt;${a?"Save":"Add advocate"}&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(a?"Edit advocate":"Add advocate",body,function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("af-save").onclick=async function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var name=document.getElementById("af-name").value.trim();if(!name)return alert("Name required.");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(a){await api.update("advocates",a.id,{name});await api.update("users",a.id,{name});S.advocates.find(x=&gt;x.id===a.id).name=name;var u=S.users.find(x=&gt;x.id===a.id);if(u)u.name=name;}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>else{var pin=document.getElementById("af-pin").value.trim();if(pin.length&lt;4)return alert("PIN must be at least 4 digits.");if(S.users.some(u=&gt;u.pin===pin))return alert("PIN already in use.");var newId=uid(),nu={id:newId,name,pin,role:"advocate"},na={id:newId,name,user_id:newId};await api.insert("users",nu);await api.insert("advocates",na);S.users.push(nu);S.advocates.push(na);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>closeSheet();S.tab="advocates";render();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">async function delAdvocate(id){if(!confirm("Delete this advocate?"))return;await api.delete("advocates",id);await api.delete("users",id);S.advocates=S.advocates.filter(x=&gt;x.id!==id);S.users=S.users.filter(x=&gt;x.id!==id);render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderMeetings(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var list=isAdmin?S.meetings:S.meetings.filter(m=&gt;m.advocate_id===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=list.map(m=&gt;`&lt;div class="card"&gt;&lt;div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"&gt;&lt;div&gt;&lt;div style="font-weight:700;font-size:14px;color:#111"&gt;${esc(m.leader_name||"")}&lt;/div&gt;&lt;div style="font-size:12px;color:#666"&gt;${esc(m.advocate_name||"")} · ${esc(m.date||"")}&lt;/div&gt;${m.contact_type?`&lt;div style="font-size:12px;color:#888"&gt;${esc(m.contact_type)}${m.contact_person?` — from: ${esc(m.contact_person)}`:""}${m.leader_contact_person?` · to: ${esc(m.leader_contact_person)}`:""}&lt;/div&gt;`:""}&lt;/div&gt;&lt;div style="display:flex;gap:6px;flex-shrink:0"&gt;&lt;button class="btn sm" onclick="viewMeeting('${m.id}')"&gt;View&lt;/button&gt;${isAdmin||m.submitted_by===u.id?`&lt;button class="btn sm d" onclick="delMeeting('${m.id}')"&gt;Del&lt;/button&gt;`:""}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;${isAdmin?"All Contacts":"My Contacts"}&lt;/div&gt;&lt;button class="btn p" onclick="openMeetSheet()"&gt;+ Log&lt;/button&gt;&lt;/div&gt;${html||'&lt;div class="empty"&gt;No contacts logged yet.&lt;/div&gt;'}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function openMeetSheet(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var myLeaders=isAdmin?S.leaders:S.leaders.filter(l=&gt;l.advocate_id===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var lOpts=myLeaders.map(l=&gt;`&lt;option value="${l.id}"&gt;${esc(l.name)}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var aOpts=S.advocates.map(a=&gt;`&lt;option value="${a.id}"&gt;${esc(a.name)}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var ctOpts=CONTACT_TYPES.map(t=&gt;`&lt;option&gt;${esc(t)}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var today=new Date().toISOString().slice(0,10);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;Leader *&lt;/label&gt;&lt;select id="mf-leader"&gt;&lt;option value=""&gt;-- Select leader --&lt;/option&gt;${lOpts}&lt;/select&gt;${isAdmin?`&lt;label class="flbl"&gt;Advocate&lt;/label&gt;&lt;select id="mf-adv"&gt;&lt;option value=""&gt;-- Select advocate --&lt;/option&gt;${aOpts}&lt;/select&gt;`:""}&lt;label class="flbl"&gt;Date *&lt;/label&gt;&lt;input id="mf-date" type="date" value="${today}"&gt;&lt;label class="flbl"&gt;Type of contact&lt;/label&gt;&lt;select id="mf-type"&gt;${ctOpts}&lt;/select&gt;&lt;label class="flbl"&gt;Advocate contact person&lt;/label&gt;&lt;input id="mf-cp" placeholder="e.g. Sarah, John &amp; Sarah"&gt;&lt;label class="flbl"&gt;Leader contact person&lt;/label&gt;&lt;input id="mf-lcp" placeholder="e.g. Mary, Pastor Bob"&gt;&lt;label class="flbl"&gt;Prayer requests&lt;/label&gt;&lt;textarea id="mf-prayer" rows="2" placeholder="e.g. healing; peace about job"&gt;&lt;/textarea&gt;&lt;label class="flbl"&gt;Physical needs&lt;/label&gt;&lt;textarea id="mf-phys" rows="2" placeholder="e.g. help with gardening; filing taxes"&gt;&lt;/textarea&gt;&lt;label class="flbl"&gt;Emotional / spiritual&lt;/label&gt;&lt;textarea id="mf-emot" rows="2"&gt;&lt;/textarea&gt;&lt;label class="flbl"&gt;General notes&lt;/label&gt;&lt;textarea id="mf-gen" rows="2"&gt;&lt;/textarea&gt;&lt;label class="flbl"&gt;Follow-up needed&lt;/label&gt;&lt;textarea id="mf-follow" rows="2"&gt;&lt;/textarea&gt;&lt;div style="font-size:11px;color:#888;margin:8px 0"&gt;Separate multiple needs with ; — each becomes its own request.&lt;/div&gt;&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="mf-save" style="flex:2"&gt;Submit&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet("Log contact",body,function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("mf-save").onclick=async function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var lid=document.getElementById("mf-leader").value,date=document.getElementById("mf-date").value;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(!lid||!date)return alert("Leader and date required.");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var ldr=S.leaders.find(l=&gt;l.id===lid),aid=isAdmin?document.getElementById("mf-adv").value:u.id,adv=S.advocates.find(a=&gt;a.id===aid);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var prayer=document.getElementById("mf-prayer").value,phys=document.getElementById("mf-phys").value;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var m={id:uid(),leader_id:lid,leader_name:ldr?.name||"",advocate_id:aid||"",advocate_name:adv?.name||"",date,contact_type:document.getElementById("mf-type").value,contact_person:document.getElementById("mf-cp").value,leader_contact_person:document.getElementById("mf-lcp").value,prayer_notes:prayer,physical_needs:phys,emotional_notes:document.getElementById("mf-emot").value,general_notes:document.getElementById("mf-gen").value,follow_up:document.getElementById("mf-follow").value,submitted_by:u.id,created_at:new Date().toISOString()};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>await api.insert("meetings",m);S.meetings.unshift(m);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var makeReqs=async(text,type)=&gt;{for(var s of text.split(";").map(x=&gt;x.trim()).filter(Boolean)){var r={id:uid(),type,leader_id:lid,leader_name:ldr?.name||"",contact_person:document.getElementById("mf-cp").value,description:s,priority:"Normal",need_level:"Needs leadership",status:"New",notes:"",submitted_by:u.id,created_at:new Date().toISOString()};await api.insert("requests",r);S.requests.unshift(r);}};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(prayer)await makeReqs(prayer,"Prayer");if(phys)await makeReqs(phys,"Physical");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for(var a of S.users.filter(x=&gt;x.role==="admin"))await addNotif(a.id,"New contact logged",`${u.name} logged a ${m.contact_type} with ${ldr?.name||"a leader"} on ${date}.`);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>closeSheet();S.tab="meetings";render();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function viewMeeting(id){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var m=S.meetings.find(x=&gt;x.id===id);if(!m)return;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var rows=[["Prayer requests",m.prayer_notes],["Physical needs",m.physical_needs],["Emotional/spiritual",m.emotional_notes],["General notes",m.general_notes],["Follow-up",m.follow_up]];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;div style="font-size:12px;color:#888;margin-bottom:14px"&gt;${esc(m.date)} · ${esc(m.advocate_name||"--")} · ${esc(m.contact_type||"")}&lt;/div&gt;${m.contact_person?`&lt;div style="font-size:13px;margin-bottom:8px"&gt;&lt;strong&gt;From:&lt;/strong&gt; ${esc(m.contact_person)}&lt;/div&gt;`:""}${m.leader_contact_person?`&lt;div style="font-size:13px;margin-bottom:8px"&gt;&lt;strong&gt;To:&lt;/strong&gt; ${esc(m.leader_contact_person)}&lt;/div&gt;`:""} ${rows.filter(r=&gt;r[1]).map(r=&gt;`&lt;div style="margin-bottom:12px"&gt;&lt;div style="font-size:12px;font-weight:700;color:#888;margin-bottom:3px"&gt;${r[0]}&lt;/div&gt;&lt;div style="font-size:14px;color:#111"&gt;${esc(r[1])}&lt;/div&gt;&lt;/div&gt;`).join("")}&lt;button class="btn p full" onclick="closeSheet()"&gt;Close&lt;/button&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(`Contact — ${esc(m.leader_name||"")}`,body);</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">async function delMeeting(id){if(!confirm("Delete this contact log?"))return;await api.delete("meetings",id);S.meetings=S.meetings.filter(x=&gt;x.id!==id);render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var reqFilter="All";</span></p>
-<p class="p1"><span class="s1">function renderRequests(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var vReqs=isAdmin?S.requests:S.requests.filter(r=&gt;r.submitted_by===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var FILTERS=["All","New","Under Review","In Progress","Fulfilled","Advocate-handled","Needs leadership","Prayer","Physical"];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var fHtml=FILTERS.map(f=&gt;`&lt;button class="fb${reqFilter===f?" on":""}" onclick="setReqFilter('${f}')"&gt;${f}&lt;/button&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var list=vReqs.filter(r=&gt;{if(reqFilter==="All")return true;if(reqFilter==="Prayer"||reqFilter==="Physical")return r.type===reqFilter;if(reqFilter==="Advocate-handled"||reqFilter==="Needs leadership")return r.need_level===reqFilter;return r.status===reqFilter;});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=list.map(r=&gt;{var sp=spill(r.status);var nl=r.need_level||"Needs leadership";var nlc=NLC[nl]||["#eee","#333"];var canEdit=isAdmin||r.submitted_by===u.id;return`&lt;div class="card"&gt;&lt;div style="display:flex;justify-content:space-between;gap:8px"&gt;&lt;div style="flex:1"&gt;&lt;div style="margin-bottom:6px"&gt;${pill(r.type,r.type==="Prayer"?"#ede9fe":"#dbeafe",r.type==="Prayer"?"#4c1d95":"#1e40af")}${pill(nl,nlc[0],nlc[1])}${pill(r.status,sp[0],sp[1])}${r.priority==="Urgent"?pill("Urgent","#fee2e2","#7f1d1d"):""}&lt;/div&gt;&lt;div style="font-weight:700;font-size:13px;color:#111"&gt;${esc(r.leader_name||"")}&lt;/div&gt;${r.contact_person?`&lt;div style="font-size:12px;color:#888"&gt;Contact: ${esc(r.contact_person)}&lt;/div&gt;`:""}&lt;div style="font-size:13px;color:#555;margin-top:2px"&gt;${esc(r.description||"")}&lt;/div&gt;${r.notes?`&lt;div style="font-size:12px;color:#aaa;margin-top:4px"&gt;Notes: ${esc(r.notes)}&lt;/div&gt;`:""}&lt;/div&gt;${canEdit?`&lt;div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0"&gt;&lt;button class="btn sm" onclick="openReqSheet('${r.id}')"&gt;Edit&lt;/button&gt;${nl==="Advocate-handled"&amp;&amp;r.status!=="Fulfilled"&amp;&amp;!isAdmin?`&lt;button class="btn sm g" onclick="markDone('${r.id}')"&gt;Done&lt;/button&gt;`:""} ${isAdmin?`&lt;button class="btn sm d" onclick="delRequest('${r.id}')"&gt;Del&lt;/button&gt;`:""}&lt;/div&gt;`:""}&lt;/div&gt;&lt;/div&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;${isAdmin?"All Requests":"My Requests"}&lt;/div&gt;&lt;button class="btn p" onclick="openReqSheet(null)"&gt;+ Add&lt;/button&gt;&lt;/div&gt;&lt;div class="filters"&gt;${fHtml}&lt;/div&gt;${html||'&lt;div class="empty"&gt;No requests found.&lt;/div&gt;'}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function setReqFilter(f){reqFilter=f;render();}</span></p>
-<p class="p1"><span class="s1">async function markDone(id){await api.update("requests",id,{status:"Fulfilled"});S.requests.find(r=&gt;r.id===id).status="Fulfilled";render();}</span></p>
-<p class="p1"><span class="s1">async function delRequest(id){if(!confirm("Delete this request?"))return;await api.delete("requests",id);S.requests=S.requests.filter(x=&gt;x.id!==id);render();}</span></p>
-<p class="p1"><span class="s1">function openReqSheet(id){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var r=id?S.requests.find(x=&gt;x.id===id):null;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var u=S.currentUser,isAdmin=u.role==="admin";</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var myLeaders=isAdmin?S.leaders:S.leaders.filter(l=&gt;l.advocate_id===u.id);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var lOpts=myLeaders.map(l=&gt;`&lt;option value="${l.id}"${r&amp;&amp;r.leader_id===l.id?" selected":""}&gt;${esc(l.name)}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var nlOpts=NEED_LEVELS.map(n=&gt;`&lt;option${r&amp;&amp;r.need_level===n?" selected":""}&gt;${n}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var stOpts=STATUS_OPTS.map(s=&gt;`&lt;option${r&amp;&amp;r.status===s?" selected":""}&gt;${s}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;Type&lt;/label&gt;&lt;select id="rf-type"&gt;&lt;option${!r||r.type==="Physical"?" selected":""}&gt;Physical&lt;/option&gt;&lt;option${r&amp;&amp;r.type==="Prayer"?" selected":""}&gt;Prayer&lt;/option&gt;&lt;option${r&amp;&amp;r.type==="Spiritual"?" selected":""}&gt;Spiritual&lt;/option&gt;&lt;option${r&amp;&amp;r.type==="Emotional"?" selected":""}&gt;Emotional&lt;/option&gt;&lt;option${r&amp;&amp;r.type==="Other"?" selected":""}&gt;Other&lt;/option&gt;&lt;/select&gt;&lt;label class="flbl"&gt;Need level *&lt;/label&gt;&lt;select id="rf-nl"&gt;${nlOpts}&lt;/select&gt;&lt;label class="flbl"&gt;Contact person&lt;/label&gt;&lt;input id="rf-cp" value="${esc(r?r.contact_person||"":"")}" placeholder="e.g. Sarah, John &amp; Mary"&gt;&lt;label class="flbl"&gt;Leader&lt;/label&gt;&lt;select id="rf-leader"&gt;&lt;option value=""&gt;-- Select leader --&lt;/option&gt;${lOpts}&lt;/select&gt;&lt;label class="flbl"&gt;Description *&lt;/label&gt;&lt;textarea id="rf-desc" rows="3" placeholder="Describe the need..."&gt;${esc(r?r.description||"":"")}&lt;/textarea&gt;&lt;label class="flbl"&gt;Priority&lt;/label&gt;&lt;select id="rf-pri"&gt;&lt;option${!r||r.priority==="Normal"?" selected":""}&gt;Normal&lt;/option&gt;&lt;option${r&amp;&amp;r.priority==="Urgent"?" selected":""}&gt;Urgent&lt;/option&gt;&lt;/select&gt;${isAdmin?`&lt;label class="flbl"&gt;Status&lt;/label&gt;&lt;select id="rf-status"&gt;${stOpts}&lt;/select&gt;&lt;label class="flbl"&gt;Leadership notes&lt;/label&gt;&lt;textarea id="rf-notes" rows="2"&gt;${esc(r?r.notes||"":"")}&lt;/textarea&gt;`:""}&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="rf-save" style="flex:2"&gt;${r?"Save":"Add request"}&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(r?"Edit request":"Add request",body,function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("rf-save").onclick=async function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var desc=document.getElementById("rf-desc").value.trim();if(!desc)return alert("Description required.");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var lid=document.getElementById("rf-leader").value,ldr=S.leaders.find(l=&gt;l.id===lid);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var d={type:document.getElementById("rf-type").value,need_level:document.getElementById("rf-nl").value,contact_person:document.getElementById("rf-cp").value,leader_id:lid||null,leader_name:ldr?.name||"",description:desc,priority:document.getElementById("rf-pri").value,status:isAdmin?document.getElementById("rf-status").value:"New",notes:isAdmin?document.getElementById("rf-notes").value:""};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(r){var prevStatus=r.status;await api.update("requests",r.id,d);Object.assign(S.requests.find(x=&gt;x.id===r.id),d);if(isAdmin&amp;&amp;prevStatus!==d.status)await addNotif(r.submitted_by,"Request status updated",`Your request for ${r.leader_name} has been updated to "${d.status}".`);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>else{d.id=uid();d.submitted_by=u.id;d.created_at=new Date().toISOString();await api.insert("requests",d);S.requests.unshift(d);if(d.need_level==="Needs leadership")for(var a of S.users.filter(x=&gt;x.role==="admin"))await addNotif(a.id,"New request needs attention",`${u.name} submitted a ${d.type} request for ${d.leader_name||"a leader"}.`);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>closeSheet();S.tab="requests";render();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var memberSkillFilter="All";</span></p>
-<p class="p1"><span class="s1">function renderMembers(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var usedSkills=[...new Set(S.members.flatMap(m=&gt;m.skills||[]))].sort();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var fHtml=`&lt;button class="fb${memberSkillFilter==="All"?" on":""}" onclick="setMemberFilter('All')"&gt;All (${S.members.length})&lt;/button&gt;`+usedSkills.map(sk=&gt;{var c=S.members.filter(m=&gt;(m.skills||[]).includes(sk)).length;return`&lt;button class="fb${memberSkillFilter===sk?" on":""}" onclick="setMemberFilter(${JSON.stringify(sk)})"&gt;${esc(sk)} (${c})&lt;/button&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var filtered=memberSkillFilter==="All"?S.members:S.members.filter(m=&gt;(m.skills||[]).includes(memberSkillFilter));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=filtered.map(m=&gt;`&lt;div class="card"&gt;&lt;div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"&gt;&lt;div style="display:flex;gap:10px;align-items:center"&gt;${av(m.name,36,"#ede9fe","#4c1d95")}&lt;div&gt;&lt;div style="font-weight:700;font-size:14px;color:#111"&gt;${esc(m.name)}&lt;/div&gt;${m.email?`&lt;div style="font-size:12px;color:#666"&gt;${esc(m.email)}&lt;/div&gt;`:""}&lt;div style="font-size:11px;color:#aaa"&gt;${esc(m.willingness||"")}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="display:flex;gap:6px"&gt;&lt;button class="btn sm" onclick="openMemberSheet(${JSON.stringify(m.id)})"&gt;Edit&lt;/button&gt;&lt;button class="btn sm d" onclick="delMember(${JSON.stringify(m.id)})"&gt;Del&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;${(m.skills||[]).length?`&lt;div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px"&gt;${(m.skills||[]).map(s=&gt;pill(s,s===memberSkillFilter?"#185FA5":"#f3f4f6",s===memberSkillFilter?"#fff":"#555")).join("")}&lt;/div&gt;`:""}&lt;/div&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;Member Skills&lt;/div&gt;&lt;div style="display:flex;gap:8px"&gt;&lt;label class="btn" style="cursor:pointer;padding:9px 16px;font-size:13px;font-weight:500"&gt;Import CSV&lt;input type="file" accept=".csv" style="display:none" onchange="importCSV(this)"&gt;&lt;/label&gt;&lt;button class="btn p" onclick="openMemberSheet(null)"&gt;+ Add&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="margin-bottom:14px"&gt;&lt;div style="font-size:12px;color:#666;margin-bottom:6px"&gt;Filter by skill&lt;/div&gt;&lt;div class="filters"&gt;${fHtml}&lt;/div&gt;&lt;/div&gt;${filtered.length===0&amp;&amp;S.members.length&gt;0?`&lt;div class="empty"&gt;No members with "${memberSkillFilter}".&lt;/div&gt;`:html||'&lt;div class="empty"&gt;No members yet.&lt;/div&gt;'}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function setMemberFilter(f){memberSkillFilter=f;render();}</span></p>
-<p class="p1"><span class="s1">function openMemberSheet(id){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var m=id?S.members.find(x=&gt;x.id===id):null;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var allSkills=[...SKILLS,...S.customSkills.filter(s=&gt;!SKILLS.includes(s))];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var selSkills=m?(m.skills||[]).slice():[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var skHtml=allSkills.map(s=&gt;`&lt;button type="button" class="skb${selSkills.includes(s)?" on":""}" onclick="this.classList.toggle('on')"&gt;${esc(s)}&lt;/button&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var willOpts=["Gift","Discounted rate","Full service"].map(w=&gt;`&lt;option${m&amp;&amp;m.willingness===w?" selected":""}&gt;${w}&lt;/option&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;Full name *&lt;/label&gt;&lt;input id="memf-name" value="${esc(m?m.name:"")}"&gt;&lt;label class="flbl"&gt;Email&lt;/label&gt;&lt;input id="memf-email" type="email" value="${esc(m?m.email||":"")}"&gt;&lt;label class="flbl"&gt;Phone&lt;/label&gt;&lt;input id="memf-phone" value="${esc(m?m.phone||":"")}"&gt;&lt;label class="flbl"&gt;Willing to serve as&lt;/label&gt;&lt;select id="memf-will"&gt;${willOpts}&lt;/select&gt;&lt;label class="flbl"&gt;Skills / abilities&lt;/label&gt;&lt;div class="sg" id="skill-grid"&gt;${skHtml}&lt;/div&gt;&lt;div style="display:flex;gap:8px;margin-top:10px"&gt;&lt;input id="memf-custom" placeholder="Add custom skill..."&gt;&lt;button class="btn sm" onclick="addCustomSkill()" style="border-color:#185FA5;color:#185FA5;flex-shrink:0"&gt;Add&lt;/button&gt;&lt;/div&gt;&lt;label class="flbl"&gt;Notes&lt;/label&gt;&lt;textarea id="memf-notes" rows="2"&gt;${esc(m?m.notes||"":"")}&lt;/textarea&gt;&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="memf-save" style="flex:2"&gt;${m?"Save":"Add member"}&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(m?"Edit member":"Add member",body,function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window._editMemberId=m?m.id:null;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("memf-save").onclick=async function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var name=document.getElementById("memf-name").value.trim();if(!name)return alert("Name required.");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var skills=[...document.querySelectorAll("#skill-grid .skb.on")].map(b=&gt;b.textContent.trim());</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var row={name,email:document.getElementById("memf-email").value,phone:document.getElementById("memf-phone").value,willingness:document.getElementById("memf-will").value,skills,notes:document.getElementById("memf-notes").value};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>var mid=window._editMemberId;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(mid){await api.update("members",mid,row);Object.assign(S.members.find(x=&gt;x.id===mid),row);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>else{row.id=uid();row.created_at=new Date().toISOString();await api.insert("members",row);S.members.push(row);}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>closeSheet();S.tab="members";render();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">async function addCustomSkill(){var inp=document.getElementById("memf-custom");var sk=inp.value.trim();if(!sk)return;if(!SKILLS.includes(sk)&amp;&amp;!S.customSkills.includes(sk)){await api.insert("custom_skills",{id:uid(),skill:sk});S.customSkills.push(sk);SKILLS.push(sk);}var grid=document.getElementById("skill-grid");if(grid&amp;&amp;![...grid.querySelectorAll(".skb")].some(b=&gt;b.textContent.trim()===sk)){var btn=document.createElement("button");btn.type="button";btn.className="skb on";btn.textContent=sk;btn.onclick=function(){this.classList.toggle("on");};grid.appendChild(btn);}inp.value="";}</span></p>
-<p class="p1"><span class="s1">async function importCSV(input){var file=input.files[0];if(!file)return;var reader=new FileReader();reader.onload=async function(ev){var lines=ev.target.result.split("\n").map(l=&gt;l.trim()).filter(l=&gt;l);if(lines.length&lt;2)return;var headers=lines[0].split(",").map(h=&gt;h.trim().toLowerCase().replace(/"/g,""));var imported=[],newSkills=[];for(var i=1;i&lt;lines.length;i++){var cols=lines[i].split(",").map(c=&gt;c.trim().replace(/"/g,""));var row={};headers.forEach((h,idx)=&gt;{row[h]=cols[idx]||"";});if(!row.name)continue;var skills=row.skills?row.skills.split(";").map(s=&gt;s.trim()).filter(Boolean):[];skills.forEach(sk=&gt;{if(!SKILLS.includes(sk)&amp;&amp;!newSkills.includes(sk))newSkills.push(sk);});imported.push({id:uid(),created_at:new Date().toISOString(),name:row.name,email:row.email||"",phone:row.phone||"",willingness:row.willingness||"Gift",skills,notes:row.notes||""});}for(var sk of newSkills){await api.insert("custom_skills",{id:uid(),skill:sk});S.customSkills.push(sk);SKILLS.push(sk);}for(var m of imported){await api.insert("members",m);S.members.push(m);}alert(`${imported.length} members imported!${newSkills.length?` ${newSkills.length} new skills added.`:""}`);input.value="";render();};reader.readAsText(file);}</span></p>
-<p class="p1"><span class="s1">async function delMember(id){if(!confirm("Delete this member?"))return;await api.delete("members",id);S.members=S.members.filter(x=&gt;x.id!==id);render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderMatching(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var open=S.requests.filter(r=&gt;r.type==="Physical"&amp;&amp;r.status!=="Fulfilled"&amp;&amp;r.status!=="Closed");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!open.length)return`&lt;div class="pg on"&gt;&lt;div class="ptitle"&gt;Smart Matching&lt;/div&gt;&lt;p style="font-size:13px;color:#666;margin-bottom:16px"&gt;Match open physical needs to members based on skills.&lt;/p&gt;&lt;div class="empty"&gt;No open physical needs to match.&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var html=open.map(req=&gt;{var wm=S.members.map(m=&gt;({m,ms:matchSkills(req.description,m.skills)})).filter(x=&gt;x.ms.length&gt;0);var um=S.members.filter(m=&gt;!wm.find(x=&gt;x.m.id===m.id));var sp=spill(req.status);var mHtml=wm.length&gt;0?`&lt;div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:8px"&gt;Skill matches (${wm.length})&lt;/div&gt;`+wm.map(({m,ms})=&gt;`&lt;div class="mr"&gt;${av(m.name,32,"#dcfce7","#14532d")}&lt;div style="flex:1;margin-left:8px"&gt;&lt;div style="font-size:13px;font-weight:600;color:#111"&gt;${esc(m.name)}&lt;/div&gt;&lt;div style="font-size:11px;color:#3B6D11;font-weight:500"&gt;Matched: ${esc(ms.join(", "))}&lt;/div&gt;&lt;div style="font-size:11px;color:#888"&gt;${esc(m.willingness||"")}&lt;/div&gt;&lt;/div&gt;&lt;button class="btn sm g" onclick="approveMatch(${JSON.stringify(req.id)},${JSON.stringify(m.id)},${JSON.stringify(ms.join(","))})"&gt;Approve&lt;/button&gt;&lt;/div&gt;`).join(""):`&lt;div style="font-size:13px;color:#E24B4A;margin-bottom:8px"&gt;No skill matches found.&lt;/div&gt;`+(um.length?`&lt;div style="font-size:12px;color:#888;margin-bottom:6px"&gt;Available members:&lt;/div&gt;`+um.slice(0,3).map(m=&gt;`&lt;div class="mr"&gt;${av(m.name,32,"#ede9fe","#4c1d95")}&lt;div style="flex:1;margin-left:8px"&gt;&lt;div style="font-size:13px;font-weight:500;color:#111"&gt;${esc(m.name)}&lt;/div&gt;&lt;div style="font-size:11px;color:#888"&gt;${esc(m.willingness||"")} · ${(m.skills||[]).slice(0,3).map(esc).join(", ")}&lt;/div&gt;&lt;/div&gt;&lt;button class="btn sm p" onclick="approveMatch(${JSON.stringify(req.id)},${JSON.stringify(m.id)},'')"&gt;Assign&lt;/button&gt;&lt;/div&gt;`).join(""):"");return`&lt;div class="card"&gt;&lt;div style="margin-bottom:8px"&gt;${pill(req.status,sp[0],sp[1])}${req.priority==="Urgent"?pill("Urgent","#fee2e2","#7f1d1d"):""}&lt;/div&gt;&lt;div style="font-weight:700;font-size:14px;color:#111"&gt;${esc(req.leader_name||"")}&lt;/div&gt;&lt;div style="font-size:13px;color:#555;margin-bottom:12px"&gt;${esc(req.description||"")}&lt;/div&gt;${mHtml}&lt;/div&gt;`;}).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="ptitle"&gt;Smart Matching&lt;/div&gt;&lt;p style="font-size:13px;color:#666;margin-bottom:16px"&gt;Match open physical needs to members based on skills.&lt;/p&gt;${html}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">async function approveMatch(reqId,memberId,skills){var m=S.members.find(x=&gt;x.id===memberId),req=S.requests.find(x=&gt;x.id===reqId);if(!m||!req)return;var notes=(req.notes?req.notes+" | ":"")+"Matched: "+m.name+(skills?` (${skills})`:"");await api.update("requests",reqId,{status:"In Progress",notes});Object.assign(req,{status:"In Progress",notes});await addNotif(req.submitted_by,"Request matched!",`Your request for ${req.leader_name} has been matched with ${m.name}${skills?` for: ${skills}`:""}.`);render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">var repRange="all";</span></p>
-<p class="p1"><span class="s1">function renderReports(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var now=new Date(),filter=items=&gt;{if(repRange==="all")return items;var c=new Date();if(repRange==="30")c.setDate(now.getDate()-30);if(repRange==="90")c.setDate(now.getDate()-90);if(repRange==="year")c.setFullYear(now.getFullYear()-1);return items.filter(i=&gt;new Date(i.created_at)&gt;=c);};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var fr=filter(S.requests),fm=filter(S.meetings);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var byKey=(arr,k)=&gt;arr.reduce((a,r)=&gt;{var v=r[k]||"Unknown";a[v]=(a[v]||0)+1;return a;},{});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var rByType=byKey(fr,"type"),rByStatus=byKey(fr,"status"),mByAdv=byKey(fm,"advocate_name");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var ful=fr.filter(r=&gt;r.status==="Fulfilled"),ah=fr.filter(r=&gt;r.need_level==="Advocate-handled"),nl=fr.filter(r=&gt;r.need_level==="Needs leadership");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var R2=(l,v)=&gt;`&lt;div class="rep-row"&gt;&lt;div style="color:#555"&gt;${esc(String(l))}&lt;/div&gt;&lt;div style="font-weight:600;color:#111"&gt;${v}&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var Sec=(t,c)=&gt;`&lt;div class="card" style="margin-bottom:12px"&gt;&lt;div style="font-size:15px;font-weight:700;color:#111;margin-bottom:12px"&gt;${t}&lt;/div&gt;${c}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="prow"&gt;&lt;div class="ptitle"&gt;Reports&lt;/div&gt;&lt;select onchange="setRepRange(this.value)" style="border:1px solid #ccc;border-radius:8px;padding:6px 10px;font-size:13px"&gt;&lt;option value="all"&gt;All time&lt;/option&gt;&lt;option value="30"&gt;Last 30 days&lt;/option&gt;&lt;option value="90"&gt;Last 90 days&lt;/option&gt;&lt;option value="year"&gt;Last year&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;&lt;div class="g2"&gt;&lt;div class="stat" style="background:#dbeafe"&gt;&lt;div style="font-size:24px;font-weight:700;color:#1e40af"&gt;${fm.length}&lt;/div&gt;&lt;div style="font-size:12px;color:#1e40af;margin-top:2px"&gt;Total contacts&lt;/div&gt;&lt;/div&gt;&lt;div class="stat" style="background:#fef3c7"&gt;&lt;div style="font-size:24px;font-weight:700;color:#92400e"&gt;${fr.length}&lt;/div&gt;&lt;div style="font-size:12px;color:#92400e;margin-top:2px"&gt;Total requests&lt;/div&gt;&lt;/div&gt;&lt;div class="stat" style="background:#dcfce7"&gt;&lt;div style="font-size:24px;font-weight:700;color:#14532d"&gt;${ful.length}&lt;/div&gt;&lt;div style="font-size:12px;color:#14532d;margin-top:2px"&gt;Fulfilled&lt;/div&gt;&lt;/div&gt;&lt;div class="stat" style="background:#fee2e2"&gt;&lt;div style="font-size:24px;font-weight:700;color:#7f1d1d"&gt;${nl.length}&lt;/div&gt;&lt;div style="font-size:12px;color:#7f1d1d;margin-top:2px"&gt;Needs leadership&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;${Sec("Requests by type",Object.entries(rByType).map(([k,v])=&gt;R2(k,v)).join("")||'&lt;div style="font-size:13px;color:#aaa"&gt;No data yet.&lt;/div&gt;')}${Sec("Requests by status",Object.entries(rByStatus).map(([k,v])=&gt;R2(k,v)).join(""))}${Sec("Requests by level",R2("Advocate-handled",ah.length)+R2("Needs leadership",nl.length))}${Sec("Contacts by advocate",Object.entries(mByAdv).map(([k,v])=&gt;R2(k,v)).join("")||'&lt;div style="font-size:13px;color:#aaa"&gt;No contacts yet.&lt;/div&gt;')}${Sec("Fulfilled requests",ful.length?ful.map(r=&gt;`&lt;div style="padding:8px 0;border-bottom:1px solid #f5f5f5"&gt;&lt;div style="font-size:13px;font-weight:600;color:#111"&gt;${esc(r.leader_name||"—")}&lt;/div&gt;&lt;div style="font-size:12px;color:#666"&gt;${esc(r.type)} · ${esc((r.description||"").slice(0,60))}&lt;/div&gt;&lt;div style="font-size:11px;color:#aaa"&gt;${(r.created_at||"").slice(0,10)}&lt;/div&gt;&lt;/div&gt;`).join(""):'&lt;div style="font-size:13px;color:#aaa"&gt;No fulfilled requests yet.&lt;/div&gt;')}${Sec("Advocate activity",S.advocates.map(a=&gt;{var am=fm.filter(m=&gt;m.advocate_name===a.name).length,ar=fr.filter(r=&gt;r.submitted_by===a.id||r.submitted_by===a.user_id).length,af=fr.filter(r=&gt;(r.submitted_by===a.id||r.submitted_by===a.user_id)&amp;&amp;r.status==="Fulfilled").length;return`&lt;div style="padding:10px 0;border-bottom:1px solid #f5f5f5"&gt;&lt;div style="font-size:13px;font-weight:600;color:#111;margin-bottom:4px"&gt;${esc(a.name)}&lt;/div&gt;&lt;div style="font-size:12px;color:#666"&gt;Contacts: ${am} · Requests: ${ar} · Fulfilled: ${af}&lt;/div&gt;&lt;/div&gt;`;}).join(""))}&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function setRepRange(v){repRange=v;render();}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function renderSettings(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var rows=S.users.map(u=&gt;`&lt;div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #f0f0f0"&gt;&lt;div style="display:flex;gap:10px;align-items:center"&gt;${av(u.name,32,u.role==="admin"?"#B5D4F4":"#9FE1CB",u.role==="admin"?"#185FA5":"#065f46")}&lt;div&gt;&lt;div style="font-size:13px;font-weight:600;color:#111"&gt;${esc(u.name)}&lt;/div&gt;&lt;div style="font-size:11px;color:#888"&gt;${u.role==="admin"?"Admin":"Advocate"}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;button class="btn sm" style="border-color:#185FA5;color:#185FA5" onclick="openPinReset(${JSON.stringify(u.id)},${JSON.stringify(u.name)})"&gt;Reset PIN&lt;/button&gt;&lt;/div&gt;`).join("");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return`&lt;div class="pg on"&gt;&lt;div class="ptitle"&gt;Settings&lt;/div&gt;&lt;div style="font-size:13px;color:#666;margin-bottom:16px"&gt;Reset a team member's PIN if they've been locked out.&lt;/div&gt;&lt;div class="card"&gt;&lt;div class="sec-title"&gt;Manage PINs&lt;/div&gt;${rows}&lt;/div&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">function openPinReset(userId,userName){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>var body=`&lt;label class="flbl"&gt;New PIN (min 4 digits)&lt;/label&gt;&lt;input id="pr-new" type="password" inputmode="numeric" placeholder="Enter new PIN"&gt;&lt;label class="flbl"&gt;Confirm new PIN&lt;/label&gt;&lt;input id="pr-confirm" type="password" inputmode="numeric" placeholder="Re-enter new PIN"&gt;&lt;div id="pr-msg" style="font-size:13px;margin:8px 0;display:none"&gt;&lt;/div&gt;&lt;div class="fg"&gt;&lt;button class="btn" onclick="closeSheet()" style="flex:1"&gt;Cancel&lt;/button&gt;&lt;button class="btn p" id="pr-save" style="flex:2"&gt;Save New PIN&lt;/button&gt;&lt;/div&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>openSheet(`Reset PIN — ${userName}`,body,function(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>document.getElementById("pr-save").onclick=async function(){var np=document.getElementById("pr-new").value,cp=document.getElementById("pr-confirm").value,msg=document.getElementById("pr-msg");msg.style.display="block";if(np.length&lt;4){msg.style.color="#E24B4A";msg.textContent="PIN must be at least 4 digits.";return;}if(np!==cp){msg.style.color="#E24B4A";msg.textContent="PINs do not match.";return;}if(S.users.filter(u=&gt;u.id!==userId).some(u=&gt;u.pin===np)){msg.style.color="#E24B4A";msg.textContent="That PIN is already in use.";return;}await api.update("users",userId,{pin:np});var u=S.users.find(x=&gt;x.id===userId);if(u)u.pin=np;msg.style.color="#3B6D11";msg.textContent="PIN updated successfully!";setTimeout(closeSheet,1200);};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">loadAll();</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<div id="app"></div>
+<script>
+const SUPA_URL="https://bkmkhifesilhqciljygd.supabase.co";
+const SUPA_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrbWtoaWZlc2lsaHFjaWxqeWdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0ODM5MTgsImV4cCI6MjA5MzA1OTkxOH0.i33mQqzMAbmBaRasATQ2TNR9HXFAn3k0EAZqB4tBCKk";
+const SKILLS=["Cooking","Carpentry","Plumbing","Electrical","Childcare","Landscaping","Cleaning","Transportation","Counseling","Music","Technology","Finance","Medical","Legal","Teaching","Photography","Design","Other"];
+const CONTACT_TYPES=["In-person meeting","Phone call","Text check-in","Email","Other"];
+const NEED_LEVELS=["Advocate-handled","Needs leadership"];
+const STATUS_OPTS=["New","Under Review","In Progress","Fulfilled","Closed"];
+const STATUS_COLORS={New:["#dbeafe","#1e40af"],"Under Review":["#fef3c7","#92400e"],"In Progress":["#ede9fe","#4c1d95"],Fulfilled:["#dcfce7","#14532d"],Closed:["#f3f4f6","#555"]};
+const NLC={"Advocate-handled":["#dcfce7","#14532d"],"Needs leadership":["#fee2e2","#7f1d1d"]};
+const SKILL_SYNONYMS={Cooking:["cook","meal","food","dinner","lunch","breakfast","bake","baking","kitchen","recipe","groceries","catering"],Carpentry:["carpentry","wood","build","building","repair","fix","cabinet","furniture","shelf","deck","fence","framing","trim","door","window"],Plumbing:["plumb","pipe","leak","drain","faucet","toilet","water","sink","shower","clog","flood"],Electrical:["electric","wire","wiring","outlet","light","fixture","breaker","switch","power","lamp"],Childcare:["child","kid","baby","babysit","toddler","infant","daycare","children","watching kids"],Landscaping:["landscape","garden","gardening","yard","lawn","mow","mowing","plant","planting","flower","tree","bush","shrub","mulch","weed","rake","grass","outdoor"],Cleaning:["clean","cleaning","housekeep","tidy","sweep","mop","vacuum","laundry","dishes","sanitize","organize"],Transportation:["transport","drive","driving","ride","car","vehicle","errand","pickup","airport","move","moving","truck"],Counseling:["counsel","counseling","support","mentor","advice","guidance","grief","stress","anxiety","depression","mental health"],Music:["music","sing","singing","song","instrument","guitar","piano","keyboard","drums","worship","choir"],Technology:["tech","technology","computer","phone","internet","wifi","network","printer","software","app","website","device","tablet","laptop","setup","troubleshoot"],Finance:["financ","money","budget","tax","taxes","accounting","bookkeep","bills","debt","savings","invest","insurance","filing","irs","bank"],Medical:["medical","health","doctor","nurse","hospital","appointment","medicine","prescription","therapy","wheelchair","recovery","surgery"],Legal:["legal","law","lawyer","attorney","document","contract","court","notary","lease","immigration","paperwork"],Teaching:["teach","teaching","tutor","tutoring","homework","school","class","lesson","study","education","reading","math","writing"],Photography:["photo","photograph","picture","camera","video","film","shoot","portrait","memory","event"],Design:["design","graphic","logo","flyer","banner","art","creative","print","poster","canva"],Other:[]};
+
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2);}
+function esc(s){return(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function pill(t,bg,c){return`<span class="pill" style="background:${bg};color:${c}">${esc(t)}</span>`;}
+function av(n,sz,bg,tc){var i=(n||"?").split(" ").map(w=>w[0]||"").slice(0,2).join("").toUpperCase();return`<div class="av" style="width:${sz}px;height:${sz}px;background:${bg};color:${tc};font-size:${Math.floor(sz*0.33)}px">${i}</div>`;}
+function spill(s){return s?STATUS_COLORS[s]||["#eee","#333"]:["#eee","#333"];}
+function matchSkills(desc,skills){var d=(desc||"").toLowerCase(),out=[];for(var sk of(skills||[])){var syns=SKILL_SYNONYMS[sk]||[sk.toLowerCase()];if(syns.some(s=>d.includes(s)))out.push(sk);}return out;}
+
+async function db(method,table,body,params){
+  var url=`${SUPA_URL}/rest/v1/${table}`;
+  if(params)url+=`?${params}`;
+  var opts={method,headers:{"Content-Type":"application/json","apikey":SUPA_KEY,"Authorization":"Bearer "+SUPA_KEY,"Prefer":"return=representation"}};
+  if(body)opts.body=JSON.stringify(body);
+  var r=await fetch(url,opts);
+  if(!r.ok){var e=await r.text();throw new Error(e);}
+  var txt=await r.text();
+  return txt?JSON.parse(txt):[];
+}
+var api={
+  get:async(t,q)=>db("GET",t,null,q||"select=*"),
+  insert:async(t,row)=>db("POST",t,row),
+  update:async(t,id,row)=>db("PATCH",t,row,`id=eq.${id}`),
+  delete:async(t,id)=>db("DELETE",t,null,`id=eq.${id}`),
+};
+
+var S={ready:false,users:[],currentUser:null,tab:"dashboard",leaders:[],advocates:[],members:[],meetings:[],requests:[],notifs:[],customSkills:[],sheet:null,sheetData:{}};
+
+async function loadAll(){
+  document.getElementById("app").innerHTML=`<div class="spin"><div>♥</div><div>Loading Love Our Leaders...</div></div>`;
+  try{
+    var[users,leaders,advocates,members,meetings,requests,notifs,cs]=await Promise.all([
+      api.get("users"),api.get("leaders"),api.get("advocates"),api.get("members"),
+      api.get("meetings","select=*&order=created_at.desc"),
+      api.get("requests","select=*&order=created_at.desc"),
+      api.get("notifications","select=*&order=created_at.desc"),
+      api.get("custom_skills")
+    ]);
+    S.users=users||[];S.leaders=leaders||[];S.advocates=advocates||[];
+    S.members=members||[];S.meetings=meetings||[];S.requests=requests||[];
+    S.notifs=notifs||[];
+    if(cs&&cs.length){S.customSkills=cs.map(r=>r.skill);cs.forEach(r=>{if(!SKILLS.includes(r.skill))SKILLS.push(r.skill);});}
+    S.ready=true;render();
+  }catch(e){
+    document.getElementById("app").innerHTML=`<div class="spin"><div>⚠️ Could not connect to database.</div><div style="font-size:12px;color:#aaa;margin-top:8px;max-width:300px;text-align:center">${e.message}</div><button class="btn p" onclick="loadAll()" style="margin-top:16px">Retry</button></div>`;
+  }
+}
+
+function render(){
+  var app=document.getElementById("app");
+  if(!S.ready){app.innerHTML=`<div class="spin"><div>♥</div><div>Loading Love Our Leaders...</div></div>`;return;}
+  if(!S.users.length){app.innerHTML=renderSetup();attachSetup();return;}
+  if(!S.currentUser){app.innerHTML=renderLogin();attachLogin();return;}
+  app.innerHTML=renderApp();attachApp();
+}
+
+function renderSetup(){
+  var rows="";
+  for(var i=0;i<2;i++)rows+=`<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:${i===0?"1px solid #f0f0f0":"none"}"><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:8px">Admin ${i+1}</div><label class="flbl">Full name</label><input id="su-name-${i}" placeholder="Your name"><label class="flbl">PIN (min 4 digits)</label><input id="su-pin-${i}" type="password" placeholder="Create a PIN" inputmode="numeric"></div>`;
+  var arows="";
+  for(var i=0;i<7;i++)arows+=`<div style="margin-bottom:16px;padding-bottom:16px;border-bottom:${i<6?"1px solid #f0f0f0":"none"}"><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:8px">Advocate ${i+1}</div><label class="flbl">Full name</label><input id="su-name-a${i}" placeholder="Advocate name"><label class="flbl">PIN (min 4 digits)</label><input id="su-pin-a${i}" type="password" placeholder="Create a PIN" inputmode="numeric"></div>`;
+  return`<div style="background:#f5f5f7;min-height:100vh;padding:20px"><div style="max-width:500px;margin:0 auto"><div style="text-align:center;margin-bottom:24px"><div style="font-size:40px">♥</div><div style="font-size:22px;font-weight:700;color:#111">Love Our Leaders</div><div style="font-size:14px;color:#666;margin-top:4px">First-time setup</div></div><div class="card"><div class="sec-title" style="color:#185FA5">Admins / Managers</div>${rows}</div><div class="card" style="margin-top:12px"><div class="sec-title" style="color:#3B6D11">Advocates</div>${arows}</div><button class="btn p full" id="su-submit" style="margin-top:16px;padding:14px;font-size:15px">Complete Setup</button></div></div>`;
+}
+function attachSetup(){
+  document.getElementById("su-submit").onclick=async function(){
+    var users=[];
+    for(var i=0;i<2;i++){var n=document.getElementById(`su-name-${i}`).value.trim(),p=document.getElementById(`su-pin-${i}`).value.trim();if(!n||p.length<4){alert("All names and PINs (min 4 digits) required.");return;}users.push({id:uid(),name:n,pin:p,role:"admin"});}
+    for(var i=0;i<7;i++){var n=document.getElementById(`su-name-a${i}`).value.trim(),p=document.getElementById(`su-pin-a${i}`).value.trim();if(!n||p.length<4){alert("All names and PINs (min 4 digits) required.");return;}users.push({id:uid(),name:n,pin:p,role:"advocate"});}
+    var pins=users.map(u=>u.pin);if(new Set(pins).size!==pins.length){alert("Each person must have a unique PIN.");return;}
+    document.getElementById("su-submit").textContent="Setting up...";
+    try{
+      for(var u of users)await api.insert("users",u);
+      for(var a of users.filter(u=>u.role==="advocate"))await api.insert("advocates",{id:a.id,name:a.name,user_id:a.id});
+      await loadAll();
+    }catch(e){alert("Setup error: "+e.message);document.getElementById("su-submit").textContent="Complete Setup";}
+  };
+}
+
+function renderLogin(){
+  var opts=S.users.map(u=>`<option value="${u.id}">${esc(u.name)} (${u.role==="admin"?"Admin":"Advocate"})</option>`).join("");
+  return`<div class="login-wrap"><div class="login-box"><div class="login-logo"><div style="font-size:48px">♥</div><div style="font-size:24px;font-weight:700;color:#111">Love Our Leaders</div><div style="font-size:14px;color:#888;margin-top:4px">Sign in to continue</div></div><div class="card"><label class="flbl">Who are you?</label><select id="li-sel"><option value="">-- Select your name --</option>${opts}</select><div id="li-pin-area" class="hid"><label class="flbl" style="margin-top:12px">Enter your PIN</label><input id="li-pin" type="password" inputmode="numeric" placeholder="PIN"><div id="li-err" style="color:#E24B4A;font-size:13px;margin-top:6px;display:none"></div><button class="btn p full" id="li-btn" style="margin-top:12px;padding:12px">Sign In</button></div></div><div style="text-align:center;margin-top:16px"><button id="li-forgot" style="background:none;border:none;color:#185FA5;font-size:13px;cursor:pointer;text-decoration:underline">Forgot PIN? Contact an admin</button></div></div></div>`;
+}
+function attachLogin(){
+  document.getElementById("li-sel").onchange=function(){document.getElementById("li-pin-area").classList.toggle("hid",!this.value);document.getElementById("li-pin").value="";document.getElementById("li-err").style.display="none";};
+  document.getElementById("li-btn").onclick=function(){var uid=document.getElementById("li-sel").value,pin=document.getElementById("li-pin").value,u=S.users.find(x=>x.id===uid);if(!u)return;if(u.pin===pin){S.currentUser=u;S.tab="dashboard";render();}else{var e=document.getElementById("li-err");e.textContent="Incorrect PIN. Please try again.";e.style.display="block";document.getElementById("li-pin").value="";}};
+  document.getElementById("li-pin").onkeydown=function(e){if(e.key==="Enter")document.getElementById("li-btn").click();};
+  document.getElementById("li-forgot").onclick=function(){var admins=S.users.filter(u=>u.role==="admin").map(u=>`<div style="font-size:14px;font-weight:500;color:#111">${esc(u.name)}</div>`).join("");openSheet("PIN Reset",`<div style="font-size:14px;color:#555;line-height:1.6;margin-bottom:16px">Contact an admin to reset your PIN via <strong>Settings → Manage PINs</strong>.</div><div style="background:#f5f5f7;border-radius:8px;padding:12px;margin-bottom:16px"><div style="font-size:12px;color:#888;margin-bottom:6px">Your admins are:</div>${admins}</div><button class="btn p full" onclick="closeSheet()">Got it</button>`);};
+}
+
+function renderApp(){
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var tabs=isAdmin?["dashboard","leaders","advocates","meetings","requests","members","matching","reports","settings"]:["dashboard","meetings","requests"];
+  var labels=isAdmin?["Home","Leaders","Advocates","Meetings","Requests","Members","Matching","Reports","Settings"]:["Home","My Meetings","My Requests"];
+  var myNotifs=S.notifs.filter(n=>n.for_user_id===u.id);
+  var unread=myNotifs.length;
+  var badge=unread>0?`<div class="bell-badge">${unread}</div>`:"";
+  var tabHtml=tabs.map((t,i)=>`<button class="tab${S.tab===t?" on":""}" onclick="goTab('${t}')">${labels[i]}</button>`).join("");
+  var sheetHtml=S.sheet?`<div class="ov" id="overlay" onclick="overlayClick(event)"><div class="sheet"><div class="shand"></div><div class="shdr"><div class="stit">${esc(S.sheet)}</div><button class="xb" onclick="closeSheet()">×</button></div><div id="sheet-body">${S.sheetData.body||""}</div></div></div>`:"";
+  return`<div class="hdr"><div class="logo-row"><div class="logo-left"><div class="logo-icon">♥</div><div><div class="logo-title">Love Our Leaders</div><div class="logo-sub">${esc(u.name)} · ${isAdmin?"Admin":"Advocate"}</div></div></div><div class="hdr-right"><button class="bell-btn" onclick="openNotifs()">🔔${badge}</button><button class="btn sm" onclick="logout()">Log out</button></div></div><div class="tabs">${tabHtml}</div></div><div style="padding-bottom:32px"><div id="pg-content"><div class="spin">Loading...</div></div></div>${sheetHtml}`;
+}
+function attachApp(){loadPageContent();if(S.sheet&&S.sheetData.attachFn)S.sheetData.attachFn();}
+function goTab(t){S.tab=t;S.sheet=null;render();}
+function logout(){S.currentUser=null;S.sheet=null;render();}
+function overlayClick(e){if(e.target.id==="overlay")closeSheet();}
+function openSheet(title,body,attachFn){S.sheet=title;S.sheetData={body,attachFn};render();}
+function closeSheet(){S.sheet=null;S.sheetData={};render();}
+
+function loadPageContent(){
+  var el=document.getElementById("pg-content");if(!el)return;
+  var isAdmin=S.currentUser.role==="admin";
+  switch(S.tab){
+    case"dashboard":el.innerHTML=renderDash();break;
+    case"leaders":if(isAdmin){el.innerHTML=renderLeaders();}break;
+    case"advocates":if(isAdmin){el.innerHTML=renderAdvocates();}break;
+    case"meetings":el.innerHTML=renderMeetings();break;
+    case"requests":el.innerHTML=renderRequests();break;
+    case"members":if(isAdmin){el.innerHTML=renderMembers();}break;
+    case"matching":if(isAdmin){el.innerHTML=renderMatching();}break;
+    case"reports":if(isAdmin){el.innerHTML=renderReports();}break;
+    case"settings":if(isAdmin){el.innerHTML=renderSettings();}break;
+  }
+}
+
+async function addNotif(forUserId,title,body){var n={id:uid(),for_user_id:forUserId,for_role:null,title,body,created_at:new Date().toISOString()};await api.insert("notifications",n);S.notifs.unshift(n);}
+function openNotifs(){var u=S.currentUser;var mine=S.notifs.filter(n=>n.for_user_id===u.id);var body=mine.length?mine.map(n=>`<div class="notif-item"><div><div style="font-size:13px;font-weight:500;color:#111">${esc(n.title)}</div><div style="font-size:12px;color:#666;margin-top:2px">${esc(n.body)}</div><div style="font-size:11px;color:#aaa;margin-top:2px">${new Date(n.created_at).toLocaleString()}</div></div><button class="btn sm d" onclick="clearNotif('${n.id}')">×</button></div>`).join("")+`<button class="btn d full" style="margin-top:16px" onclick="clearAllNotifs()">Clear all</button>`:`<div style="text-align:center;padding:2rem 0;color:#aaa;font-size:13px">No new notifications.</div>`;openSheet("Notifications",body);}
+async function clearNotif(id){await api.delete("notifications",id);S.notifs=S.notifs.filter(n=>n.id!==id);openNotifs();}
+async function clearAllNotifs(){var u=S.currentUser;var mine=S.notifs.filter(n=>n.for_user_id===u.id);for(var n of mine)await api.delete("notifications",n.id);S.notifs=S.notifs.filter(n=>n.for_user_id!==u.id);closeSheet();}
+
+function renderDash(){
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var vReqs=isAdmin?S.requests:S.requests.filter(r=>r.submitted_by===u.id);
+  var vMeets=isAdmin?S.meetings:S.meetings.filter(m=>m.advocate_id===u.id);
+  var open=vReqs.filter(r=>r.status==="New"||r.status==="Under Review");
+  var ful=vReqs.filter(r=>r.status==="Fulfilled");
+  var pray=vReqs.filter(r=>r.type==="Prayer");
+  var mo=new Date().toISOString().slice(0,7);
+  var mmo=vMeets.filter(m=>(m.date||"").startsWith(mo));
+  var unassigned=S.leaders.filter(l=>!l.advocate_id);
+  var stats=isAdmin?[["Leaders",S.leaders.length,"#dbeafe","#1e40af"],["Advocates",S.advocates.length,"#d1fae5","#065f46"],["Open requests",open.length,"#fef3c7","#92400e"],["Fulfilled",ful.length,"#dcfce7","#14532d"],["Prayer",pray.length,"#ede9fe","#4c1d95"],["Meetings/mo",mmo.length,"#fee2e2","#7f1d1d"]]:[["My meetings",vMeets.length,"#dbeafe","#1e40af"],["Open requests",open.length,"#fef3c7","#92400e"],["Fulfilled",ful.length,"#dcfce7","#14532d"],["Prayer",pray.length,"#ede9fe","#4c1d95"]];
+  var statHtml=stats.map(s=>`<div class="stat" style="background:${s[2]}"><div style="font-size:26px;font-weight:700;color:${s[3]}">${s[1]}</div><div style="font-size:12px;color:${s[3]};margin-top:2px">${s[0]}</div></div>`).join("");
+  var alertHtml=isAdmin&&unassigned.length?`<div class="alrt"><div style="font-weight:700;color:#A32D2D;font-size:13px;margin-bottom:4px">Leaders without advocate (${unassigned.length})</div>${unassigned.map(l=>`<div style="font-size:13px;color:#555">${esc(l.name)} — ${esc(l.role||"")}</div>`).join("")}</div>`:"";
+  var reqHtml=open.slice(0,5).map(r=>{var sp=spill(r.status);return`<div class="card">${pill(r.type,r.type==="Prayer"?"#ede9fe":"#dbeafe",r.type==="Prayer"?"#4c1d95":"#1e40af")}${pill(r.status,sp[0],sp[1])}<div style="font-weight:600;font-size:13px;color:#111;margin-top:4px">${esc(r.leader_name||"")}</div><div style="font-size:13px;color:#666;margin-top:2px">${esc((r.description||"").slice(0,90))}</div></div>`;}).join("");
+  return`<div class="pg on"><div class="ptitle">Dashboard</div><div class="g2">${statHtml}</div>${alertHtml}${reqHtml}${!open.length?'<div class="empty">All caught up! No open requests.</div>':""}</div>`;
+}
+
+function renderLeaders(){
+  var html=S.leaders.map(l=>{var adv=S.advocates.find(a=>a.id===l.advocate_id);var mc=S.meetings.filter(m=>m.leader_id===l.id).length;var rc=S.requests.filter(r=>r.leader_id===l.id&&(r.status==="New"||r.status==="Under Review")).length;return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div style="display:flex;gap:10px;align-items:center">${av(l.name,36,"#B5D4F4","#185FA5")}<div><div style="font-weight:700;font-size:14px;color:#111">${esc(l.name)}</div><div style="font-size:12px;color:#666">${esc(l.role||"")}</div></div></div><div style="display:flex;gap:6px"><button class="btn sm" onclick="editLeader('${l.id}')">Edit</button><button class="btn sm d" onclick="delLeader('${l.id}')">Del</button></div></div><div class="ci">Advocate: ${adv?`<strong>${esc(adv.name)}</strong>`:`<span style="color:#A32D2D">Unassigned</span>`} · Meetings: ${mc} · Open: ${rc}</div></div>`;}).join("");
+  return`<div class="pg on"><div class="prow"><div class="ptitle">Leaders</div><button class="btn p" onclick="openLeaderSheet(null)">+ Add</button></div>${html||'<div class="empty">No leaders yet.</div>'}</div>`;
+}
+function openLeaderSheet(l){
+  var advOpts=S.advocates.map(a=>`<option value="${a.id}"${l&&l.advocate_id===a.id?" selected":""}>${esc(a.name)}</option>`).join("");
+  var body=`<label class="flbl">Full name *</label><input id="lf-name" value="${esc(l?l.name:"")}"><label class="flbl">Role</label><input id="lf-role" value="${esc(l?l.role||"":"")}"><label class="flbl">Email</label><input id="lf-email" type="email" value="${esc(l?l.email||":"")}"><label class="flbl">Phone</label><input id="lf-phone" value="${esc(l?l.phone||":"")}"><label class="flbl">Assigned advocate</label><select id="lf-adv"><option value="">-- Select --</option>${advOpts}</select><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="lf-save" style="flex:2">${l?"Save":"Add leader"}</button></div>`;
+  openSheet(l?"Edit leader":"Add leader",body,function(){document.getElementById("lf-save").onclick=async function(){var name=document.getElementById("lf-name").value.trim();if(!name)return alert("Name required.");var row={name,role:document.getElementById("lf-role").value,email:document.getElementById("lf-email").value,phone:document.getElementById("lf-phone").value,advocate_id:document.getElementById("lf-adv").value||null};if(l){await api.update("leaders",l.id,row);Object.assign(S.leaders.find(x=>x.id===l.id),row);}else{row.id=uid();row.created_at=new Date().toISOString();await api.insert("leaders",row);S.leaders.push(row);}closeSheet();S.tab="leaders";render();};});
+}
+function editLeader(id){openLeaderSheet(S.leaders.find(l=>l.id===id));}
+async function delLeader(id){if(!confirm("Delete this leader?"))return;await api.delete("leaders",id);S.leaders=S.leaders.filter(x=>x.id!==id);render();}
+
+function renderAdvocates(){
+  var html=S.advocates.map(a=>{var lnames=S.leaders.filter(l=>l.advocate_id===a.id).map(l=>l.name);var mc=S.meetings.filter(m=>m.advocate_id===a.id).length;return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div style="display:flex;gap:10px;align-items:center">${av(a.name,36,"#9FE1CB","#065f46")}<div><div style="font-weight:700;font-size:14px;color:#111">${esc(a.name)}</div><div style="font-size:12px;color:#666">Serving: ${lnames.length?esc(lnames.join(", ")):"No leader assigned"}</div><div style="font-size:12px;color:#888">Meetings: ${mc}</div></div></div><div style="display:flex;gap:6px"><button class="btn sm" onclick="openAdvSheet('${a.id}')">Edit</button><button class="btn sm d" onclick="delAdvocate('${a.id}')">Del</button></div></div></div>`;}).join("");
+  return`<div class="pg on"><div class="prow"><div class="ptitle">Advocates</div><button class="btn p" onclick="openAdvSheet(null)">+ Add</button></div><div style="font-size:13px;color:#666;margin-bottom:16px">Edit, add, or remove advocates here.</div>${html||'<div class="empty">No advocates yet.</div>'}</div>`;
+}
+function openAdvSheet(id){
+  var a=id?S.advocates.find(x=>x.id===id):null;
+  var body=`<label class="flbl">Full name *</label><input id="af-name" value="${esc(a?a.name:"")}"><label class="flbl">${a?"":"PIN (min 4 digits) *"}</label>${a?`<div style="font-size:12px;color:#888;margin-top:4px">To reset PIN use Settings → Manage PINs.</div>`:`<input id="af-pin" type="password" inputmode="numeric" placeholder="Create a unique PIN">`}<div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="af-save" style="flex:2">${a?"Save":"Add advocate"}</button></div>`;
+  openSheet(a?"Edit advocate":"Add advocate",body,function(){
+    document.getElementById("af-save").onclick=async function(){
+      var name=document.getElementById("af-name").value.trim();if(!name)return alert("Name required.");
+      if(a){await api.update("advocates",a.id,{name});await api.update("users",a.id,{name});S.advocates.find(x=>x.id===a.id).name=name;var u=S.users.find(x=>x.id===a.id);if(u)u.name=name;}
+      else{var pin=document.getElementById("af-pin").value.trim();if(pin.length<4)return alert("PIN must be at least 4 digits.");if(S.users.some(u=>u.pin===pin))return alert("PIN already in use.");var newId=uid(),nu={id:newId,name,pin,role:"advocate"},na={id:newId,name,user_id:newId};await api.insert("users",nu);await api.insert("advocates",na);S.users.push(nu);S.advocates.push(na);}
+      closeSheet();S.tab="advocates";render();
+    };
+  });
+}
+async function delAdvocate(id){if(!confirm("Delete this advocate?"))return;await api.delete("advocates",id);await api.delete("users",id);S.advocates=S.advocates.filter(x=>x.id!==id);S.users=S.users.filter(x=>x.id!==id);render();}
+
+function renderMeetings(){
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var list=isAdmin?S.meetings:S.meetings.filter(m=>m.advocate_id===u.id);
+  var html=list.map(m=>`<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div><div style="font-weight:700;font-size:14px;color:#111">${esc(m.leader_name||"")}</div><div style="font-size:12px;color:#666">${esc(m.advocate_name||"")} · ${esc(m.date||"")}</div>${m.contact_type?`<div style="font-size:12px;color:#888">${esc(m.contact_type)}${m.contact_person?` — from: ${esc(m.contact_person)}`:""}${m.leader_contact_person?` · to: ${esc(m.leader_contact_person)}`:""}</div>`:""}</div><div style="display:flex;gap:6px;flex-shrink:0"><button class="btn sm" onclick="viewMeeting('${m.id}')">View</button>${isAdmin||m.submitted_by===u.id?`<button class="btn sm d" onclick="delMeeting('${m.id}')">Del</button>`:""}</div></div></div>`).join("");
+  return`<div class="pg on"><div class="prow"><div class="ptitle">${isAdmin?"All Contacts":"My Contacts"}</div><button class="btn p" onclick="openMeetSheet()">+ Log</button></div>${html||'<div class="empty">No contacts logged yet.</div>'}</div>`;
+}
+function openMeetSheet(){
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var myLeaders=isAdmin?S.leaders:S.leaders.filter(l=>l.advocate_id===u.id);
+  var lOpts=myLeaders.map(l=>`<option value="${l.id}">${esc(l.name)}</option>`).join("");
+  var aOpts=S.advocates.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join("");
+  var ctOpts=CONTACT_TYPES.map(t=>`<option>${esc(t)}</option>`).join("");
+  var today=new Date().toISOString().slice(0,10);
+  var body=`<label class="flbl">Leader *</label><select id="mf-leader"><option value="">-- Select leader --</option>${lOpts}</select>${isAdmin?`<label class="flbl">Advocate</label><select id="mf-adv"><option value="">-- Select advocate --</option>${aOpts}</select>`:""}<label class="flbl">Date *</label><input id="mf-date" type="date" value="${today}"><label class="flbl">Type of contact</label><select id="mf-type">${ctOpts}</select><label class="flbl">Advocate contact person</label><input id="mf-cp" placeholder="e.g. Sarah, John & Sarah"><label class="flbl">Leader contact person</label><input id="mf-lcp" placeholder="e.g. Mary, Pastor Bob"><label class="flbl">Prayer requests</label><textarea id="mf-prayer" rows="2" placeholder="e.g. healing; peace about job"></textarea><label class="flbl">Physical needs</label><textarea id="mf-phys" rows="2" placeholder="e.g. help with gardening; filing taxes"></textarea><label class="flbl">Emotional / spiritual</label><textarea id="mf-emot" rows="2"></textarea><label class="flbl">General notes</label><textarea id="mf-gen" rows="2"></textarea><label class="flbl">Follow-up needed</label><textarea id="mf-follow" rows="2"></textarea><div style="font-size:11px;color:#888;margin:8px 0">Separate multiple needs with ; — each becomes its own request.</div><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="mf-save" style="flex:2">Submit</button></div>`;
+  openSheet("Log contact",body,function(){
+    document.getElementById("mf-save").onclick=async function(){
+      var lid=document.getElementById("mf-leader").value,date=document.getElementById("mf-date").value;
+      if(!lid||!date)return alert("Leader and date required.");
+      var ldr=S.leaders.find(l=>l.id===lid),aid=isAdmin?document.getElementById("mf-adv").value:u.id,adv=S.advocates.find(a=>a.id===aid);
+      var prayer=document.getElementById("mf-prayer").value,phys=document.getElementById("mf-phys").value;
+      var m={id:uid(),leader_id:lid,leader_name:ldr?.name||"",advocate_id:aid||"",advocate_name:adv?.name||"",date,contact_type:document.getElementById("mf-type").value,contact_person:document.getElementById("mf-cp").value,leader_contact_person:document.getElementById("mf-lcp").value,prayer_notes:prayer,physical_needs:phys,emotional_notes:document.getElementById("mf-emot").value,general_notes:document.getElementById("mf-gen").value,follow_up:document.getElementById("mf-follow").value,submitted_by:u.id,created_at:new Date().toISOString()};
+      await api.insert("meetings",m);S.meetings.unshift(m);
+      var makeReqs=async(text,type)=>{for(var s of text.split(";").map(x=>x.trim()).filter(Boolean)){var r={id:uid(),type,leader_id:lid,leader_name:ldr?.name||"",contact_person:document.getElementById("mf-cp").value,description:s,priority:"Normal",need_level:"Needs leadership",status:"New",notes:"",submitted_by:u.id,created_at:new Date().toISOString()};await api.insert("requests",r);S.requests.unshift(r);}};
+      if(prayer)await makeReqs(prayer,"Prayer");if(phys)await makeReqs(phys,"Physical");
+      for(var a of S.users.filter(x=>x.role==="admin"))await addNotif(a.id,"New contact logged",`${u.name} logged a ${m.contact_type} with ${ldr?.name||"a leader"} on ${date}.`);
+      closeSheet();S.tab="meetings";render();
+    };
+  });
+}
+function viewMeeting(id){
+  var m=S.meetings.find(x=>x.id===id);if(!m)return;
+  var rows=[["Prayer requests",m.prayer_notes],["Physical needs",m.physical_needs],["Emotional/spiritual",m.emotional_notes],["General notes",m.general_notes],["Follow-up",m.follow_up]];
+  var body=`<div style="font-size:12px;color:#888;margin-bottom:14px">${esc(m.date)} · ${esc(m.advocate_name||"--")} · ${esc(m.contact_type||"")}</div>${m.contact_person?`<div style="font-size:13px;margin-bottom:8px"><strong>From:</strong> ${esc(m.contact_person)}</div>`:""}${m.leader_contact_person?`<div style="font-size:13px;margin-bottom:8px"><strong>To:</strong> ${esc(m.leader_contact_person)}</div>`:""} ${rows.filter(r=>r[1]).map(r=>`<div style="margin-bottom:12px"><div style="font-size:12px;font-weight:700;color:#888;margin-bottom:3px">${r[0]}</div><div style="font-size:14px;color:#111">${esc(r[1])}</div></div>`).join("")}<button class="btn p full" onclick="closeSheet()">Close</button>`;
+  openSheet(`Contact — ${esc(m.leader_name||"")}`,body);
+}
+async function delMeeting(id){if(!confirm("Delete this contact log?"))return;await api.delete("meetings",id);S.meetings=S.meetings.filter(x=>x.id!==id);render();}
+
+var reqFilter="All";
+function renderRequests(){
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var vReqs=isAdmin?S.requests:S.requests.filter(r=>r.submitted_by===u.id);
+  var FILTERS=["All","New","Under Review","In Progress","Fulfilled","Advocate-handled","Needs leadership","Prayer","Physical"];
+  var fHtml=FILTERS.map(f=>`<button class="fb${reqFilter===f?" on":""}" onclick="setReqFilter('${f}')">${f}</button>`).join("");
+  var list=vReqs.filter(r=>{if(reqFilter==="All")return true;if(reqFilter==="Prayer"||reqFilter==="Physical")return r.type===reqFilter;if(reqFilter==="Advocate-handled"||reqFilter==="Needs leadership")return r.need_level===reqFilter;return r.status===reqFilter;});
+  var html=list.map(r=>{var sp=spill(r.status);var nl=r.need_level||"Needs leadership";var nlc=NLC[nl]||["#eee","#333"];var canEdit=isAdmin||r.submitted_by===u.id;return`<div class="card"><div style="display:flex;justify-content:space-between;gap:8px"><div style="flex:1"><div style="margin-bottom:6px">${pill(r.type,r.type==="Prayer"?"#ede9fe":"#dbeafe",r.type==="Prayer"?"#4c1d95":"#1e40af")}${pill(nl,nlc[0],nlc[1])}${pill(r.status,sp[0],sp[1])}${r.priority==="Urgent"?pill("Urgent","#fee2e2","#7f1d1d"):""}</div><div style="font-weight:700;font-size:13px;color:#111">${esc(r.leader_name||"")}</div>${r.contact_person?`<div style="font-size:12px;color:#888">Contact: ${esc(r.contact_person)}</div>`:""}<div style="font-size:13px;color:#555;margin-top:2px">${esc(r.description||"")}</div>${r.notes?`<div style="font-size:12px;color:#aaa;margin-top:4px">Notes: ${esc(r.notes)}</div>`:""}</div>${canEdit?`<div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0"><button class="btn sm" onclick="openReqSheet('${r.id}')">Edit</button>${nl==="Advocate-handled"&&r.status!=="Fulfilled"&&!isAdmin?`<button class="btn sm g" onclick="markDone('${r.id}')">Done</button>`:""} ${isAdmin?`<button class="btn sm d" onclick="delRequest('${r.id}')">Del</button>`:""}</div>`:""}</div></div>`;}).join("");
+  return`<div class="pg on"><div class="prow"><div class="ptitle">${isAdmin?"All Requests":"My Requests"}</div><button class="btn p" onclick="openReqSheet(null)">+ Add</button></div><div class="filters">${fHtml}</div>${html||'<div class="empty">No requests found.</div>'}</div>`;
+}
+function setReqFilter(f){reqFilter=f;render();}
+async function markDone(id){await api.update("requests",id,{status:"Fulfilled"});S.requests.find(r=>r.id===id).status="Fulfilled";render();}
+async function delRequest(id){if(!confirm("Delete this request?"))return;await api.delete("requests",id);S.requests=S.requests.filter(x=>x.id!==id);render();}
+function openReqSheet(id){
+  var r=id?S.requests.find(x=>x.id===id):null;
+  var u=S.currentUser,isAdmin=u.role==="admin";
+  var myLeaders=isAdmin?S.leaders:S.leaders.filter(l=>l.advocate_id===u.id);
+  var lOpts=myLeaders.map(l=>`<option value="${l.id}"${r&&r.leader_id===l.id?" selected":""}>${esc(l.name)}</option>`).join("");
+  var nlOpts=NEED_LEVELS.map(n=>`<option${r&&r.need_level===n?" selected":""}>${n}</option>`).join("");
+  var stOpts=STATUS_OPTS.map(s=>`<option${r&&r.status===s?" selected":""}>${s}</option>`).join("");
+  var body=`<label class="flbl">Type</label><select id="rf-type"><option${!r||r.type==="Physical"?" selected":""}>Physical</option><option${r&&r.type==="Prayer"?" selected":""}>Prayer</option><option${r&&r.type==="Spiritual"?" selected":""}>Spiritual</option><option${r&&r.type==="Emotional"?" selected":""}>Emotional</option><option${r&&r.type==="Other"?" selected":""}>Other</option></select><label class="flbl">Need level *</label><select id="rf-nl">${nlOpts}</select><label class="flbl">Contact person</label><input id="rf-cp" value="${esc(r?r.contact_person||"":"")}" placeholder="e.g. Sarah, John & Mary"><label class="flbl">Leader</label><select id="rf-leader"><option value="">-- Select leader --</option>${lOpts}</select><label class="flbl">Description *</label><textarea id="rf-desc" rows="3" placeholder="Describe the need...">${esc(r?r.description||"":"")}</textarea><label class="flbl">Priority</label><select id="rf-pri"><option${!r||r.priority==="Normal"?" selected":""}>Normal</option><option${r&&r.priority==="Urgent"?" selected":""}>Urgent</option></select>${isAdmin?`<label class="flbl">Status</label><select id="rf-status">${stOpts}</select><label class="flbl">Leadership notes</label><textarea id="rf-notes" rows="2">${esc(r?r.notes||"":"")}</textarea>`:""}<div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="rf-save" style="flex:2">${r?"Save":"Add request"}</button></div>`;
+  openSheet(r?"Edit request":"Add request",body,function(){
+    document.getElementById("rf-save").onclick=async function(){
+      var desc=document.getElementById("rf-desc").value.trim();if(!desc)return alert("Description required.");
+      var lid=document.getElementById("rf-leader").value,ldr=S.leaders.find(l=>l.id===lid);
+      var d={type:document.getElementById("rf-type").value,need_level:document.getElementById("rf-nl").value,contact_person:document.getElementById("rf-cp").value,leader_id:lid||null,leader_name:ldr?.name||"",description:desc,priority:document.getElementById("rf-pri").value,status:isAdmin?document.getElementById("rf-status").value:"New",notes:isAdmin?document.getElementById("rf-notes").value:""};
+      if(r){var prevStatus=r.status;await api.update("requests",r.id,d);Object.assign(S.requests.find(x=>x.id===r.id),d);if(isAdmin&&prevStatus!==d.status)await addNotif(r.submitted_by,"Request status updated",`Your request for ${r.leader_name} has been updated to "${d.status}".`);}
+      else{d.id=uid();d.submitted_by=u.id;d.created_at=new Date().toISOString();await api.insert("requests",d);S.requests.unshift(d);if(d.need_level==="Needs leadership")for(var a of S.users.filter(x=>x.role==="admin"))await addNotif(a.id,"New request needs attention",`${u.name} submitted a ${d.type} request for ${d.leader_name||"a leader"}.`);}
+      closeSheet();S.tab="requests";render();
+    };
+  });
+}
+
+var memberSkillFilter="All";
+function renderMembers(){
+  var usedSkills=[...new Set(S.members.flatMap(m=>m.skills||[]))].sort();
+  var fHtml=`<button class="fb${memberSkillFilter==="All"?" on":""}" onclick="setMemberFilter('All')">All (${S.members.length})</button>`+usedSkills.map(sk=>{var c=S.members.filter(m=>(m.skills||[]).includes(sk)).length;return`<button class="fb${memberSkillFilter===sk?" on":""}" onclick="setMemberFilter(${JSON.stringify(sk)})">${esc(sk)} (${c})</button>`;}).join("");
+  var filtered=memberSkillFilter==="All"?S.members:S.members.filter(m=>(m.skills||[]).includes(memberSkillFilter));
+  var html=filtered.map(m=>`<div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div style="display:flex;gap:10px;align-items:center">${av(m.name,36,"#ede9fe","#4c1d95")}<div><div style="font-weight:700;font-size:14px;color:#111">${esc(m.name)}</div>${m.email?`<div style="font-size:12px;color:#666">${esc(m.email)}</div>`:""}<div style="font-size:11px;color:#aaa">${esc(m.willingness||"")}</div></div></div><div style="display:flex;gap:6px"><button class="btn sm" onclick="openMemberSheet(${JSON.stringify(m.id)})">Edit</button><button class="btn sm d" onclick="delMember(${JSON.stringify(m.id)})">Del</button></div></div>${(m.skills||[]).length?`<div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px">${(m.skills||[]).map(s=>pill(s,s===memberSkillFilter?"#185FA5":"#f3f4f6",s===memberSkillFilter?"#fff":"#555")).join("")}</div>`:""}</div>`).join("");
+  return`<div class="pg on"><div class="prow"><div class="ptitle">Member Skills</div><div style="display:flex;gap:8px"><label class="btn" style="cursor:pointer;padding:9px 16px;font-size:13px;font-weight:500">Import CSV<input type="file" accept=".csv" style="display:none" onchange="importCSV(this)"></label><button class="btn p" onclick="openMemberSheet(null)">+ Add</button></div></div><div style="margin-bottom:14px"><div style="font-size:12px;color:#666;margin-bottom:6px">Filter by skill</div><div class="filters">${fHtml}</div></div>${filtered.length===0&&S.members.length>0?`<div class="empty">No members with "${memberSkillFilter}".</div>`:html||'<div class="empty">No members yet.</div>'}</div>`;
+}
+function setMemberFilter(f){memberSkillFilter=f;render();}
+function openMemberSheet(id){
+  var m=id?S.members.find(x=>x.id===id):null;
+  var allSkills=[...SKILLS,...S.customSkills.filter(s=>!SKILLS.includes(s))];
+  var selSkills=m?(m.skills||[]).slice():[];
+  var skHtml=allSkills.map(s=>`<button type="button" class="skb${selSkills.includes(s)?" on":""}" onclick="this.classList.toggle('on')">${esc(s)}</button>`).join("");
+  var willOpts=["Gift","Discounted rate","Full service"].map(w=>`<option${m&&m.willingness===w?" selected":""}>${w}</option>`).join("");
+  var body=`<label class="flbl">Full name *</label><input id="memf-name" value="${esc(m?m.name:"")}"><label class="flbl">Email</label><input id="memf-email" type="email" value="${esc(m?m.email||":"")}"><label class="flbl">Phone</label><input id="memf-phone" value="${esc(m?m.phone||":"")}"><label class="flbl">Willing to serve as</label><select id="memf-will">${willOpts}</select><label class="flbl">Skills / abilities</label><div class="sg" id="skill-grid">${skHtml}</div><div style="display:flex;gap:8px;margin-top:10px"><input id="memf-custom" placeholder="Add custom skill..."><button class="btn sm" onclick="addCustomSkill()" style="border-color:#185FA5;color:#185FA5;flex-shrink:0">Add</button></div><label class="flbl">Notes</label><textarea id="memf-notes" rows="2">${esc(m?m.notes||"":"")}</textarea><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="memf-save" style="flex:2">${m?"Save":"Add member"}</button></div>`;
+  openSheet(m?"Edit member":"Add member",body,function(){
+    window._editMemberId=m?m.id:null;
+    document.getElementById("memf-save").onclick=async function(){
+      var name=document.getElementById("memf-name").value.trim();if(!name)return alert("Name required.");
+      var skills=[...document.querySelectorAll("#skill-grid .skb.on")].map(b=>b.textContent.trim());
+      var row={name,email:document.getElementById("memf-email").value,phone:document.getElementById("memf-phone").value,willingness:document.getElementById("memf-will").value,skills,notes:document.getElementById("memf-notes").value};
+      var mid=window._editMemberId;
+      if(mid){await api.update("members",mid,row);Object.assign(S.members.find(x=>x.id===mid),row);}
+      else{row.id=uid();row.created_at=new Date().toISOString();await api.insert("members",row);S.members.push(row);}
+      closeSheet();S.tab="members";render();
+    };
+  });
+}
+async function addCustomSkill(){var inp=document.getElementById("memf-custom");var sk=inp.value.trim();if(!sk)return;if(!SKILLS.includes(sk)&&!S.customSkills.includes(sk)){await api.insert("custom_skills",{id:uid(),skill:sk});S.customSkills.push(sk);SKILLS.push(sk);}var grid=document.getElementById("skill-grid");if(grid&&![...grid.querySelectorAll(".skb")].some(b=>b.textContent.trim()===sk)){var btn=document.createElement("button");btn.type="button";btn.className="skb on";btn.textContent=sk;btn.onclick=function(){this.classList.toggle("on");};grid.appendChild(btn);}inp.value="";}
+async function importCSV(input){var file=input.files[0];if(!file)return;var reader=new FileReader();reader.onload=async function(ev){var lines=ev.target.result.split("\n").map(l=>l.trim()).filter(l=>l);if(lines.length<2)return;var headers=lines[0].split(",").map(h=>h.trim().toLowerCase().replace(/"/g,""));var imported=[],newSkills=[];for(var i=1;i<lines.length;i++){var cols=lines[i].split(",").map(c=>c.trim().replace(/"/g,""));var row={};headers.forEach((h,idx)=>{row[h]=cols[idx]||"";});if(!row.name)continue;var skills=row.skills?row.skills.split(";").map(s=>s.trim()).filter(Boolean):[];skills.forEach(sk=>{if(!SKILLS.includes(sk)&&!newSkills.includes(sk))newSkills.push(sk);});imported.push({id:uid(),created_at:new Date().toISOString(),name:row.name,email:row.email||"",phone:row.phone||"",willingness:row.willingness||"Gift",skills,notes:row.notes||""});}for(var sk of newSkills){await api.insert("custom_skills",{id:uid(),skill:sk});S.customSkills.push(sk);SKILLS.push(sk);}for(var m of imported){await api.insert("members",m);S.members.push(m);}alert(`${imported.length} members imported!${newSkills.length?` ${newSkills.length} new skills added.`:""}`);input.value="";render();};reader.readAsText(file);}
+async function delMember(id){if(!confirm("Delete this member?"))return;await api.delete("members",id);S.members=S.members.filter(x=>x.id!==id);render();}
+
+function renderMatching(){
+  var open=S.requests.filter(r=>r.type==="Physical"&&r.status!=="Fulfilled"&&r.status!=="Closed");
+  if(!open.length)return`<div class="pg on"><div class="ptitle">Smart Matching</div><p style="font-size:13px;color:#666;margin-bottom:16px">Match open physical needs to members based on skills.</p><div class="empty">No open physical needs to match.</div></div>`;
+  var html=open.map(req=>{var wm=S.members.map(m=>({m,ms:matchSkills(req.description,m.skills)})).filter(x=>x.ms.length>0);var um=S.members.filter(m=>!wm.find(x=>x.m.id===m.id));var sp=spill(req.status);var mHtml=wm.length>0?`<div style="font-size:12px;font-weight:600;color:#3B6D11;margin-bottom:8px">Skill matches (${wm.length})</div>`+wm.map(({m,ms})=>`<div class="mr">${av(m.name,32,"#dcfce7","#14532d")}<div style="flex:1;margin-left:8px"><div style="font-size:13px;font-weight:600;color:#111">${esc(m.name)}</div><div style="font-size:11px;color:#3B6D11;font-weight:500">Matched: ${esc(ms.join(", "))}</div><div style="font-size:11px;color:#888">${esc(m.willingness||"")}</div></div><button class="btn sm g" onclick="approveMatch(${JSON.stringify(req.id)},${JSON.stringify(m.id)},${JSON.stringify(ms.join(","))})">Approve</button></div>`).join(""):`<div style="font-size:13px;color:#E24B4A;margin-bottom:8px">No skill matches found.</div>`+(um.length?`<div style="font-size:12px;color:#888;margin-bottom:6px">Available members:</div>`+um.slice(0,3).map(m=>`<div class="mr">${av(m.name,32,"#ede9fe","#4c1d95")}<div style="flex:1;margin-left:8px"><div style="font-size:13px;font-weight:500;color:#111">${esc(m.name)}</div><div style="font-size:11px;color:#888">${esc(m.willingness||"")} · ${(m.skills||[]).slice(0,3).map(esc).join(", ")}</div></div><button class="btn sm p" onclick="approveMatch(${JSON.stringify(req.id)},${JSON.stringify(m.id)},'')">Assign</button></div>`).join(""):"");return`<div class="card"><div style="margin-bottom:8px">${pill(req.status,sp[0],sp[1])}${req.priority==="Urgent"?pill("Urgent","#fee2e2","#7f1d1d"):""}</div><div style="font-weight:700;font-size:14px;color:#111">${esc(req.leader_name||"")}</div><div style="font-size:13px;color:#555;margin-bottom:12px">${esc(req.description||"")}</div>${mHtml}</div>`;}).join("");
+  return`<div class="pg on"><div class="ptitle">Smart Matching</div><p style="font-size:13px;color:#666;margin-bottom:16px">Match open physical needs to members based on skills.</p>${html}</div>`;
+}
+async function approveMatch(reqId,memberId,skills){var m=S.members.find(x=>x.id===memberId),req=S.requests.find(x=>x.id===reqId);if(!m||!req)return;var notes=(req.notes?req.notes+" | ":"")+"Matched: "+m.name+(skills?` (${skills})`:"");await api.update("requests",reqId,{status:"In Progress",notes});Object.assign(req,{status:"In Progress",notes});await addNotif(req.submitted_by,"Request matched!",`Your request for ${req.leader_name} has been matched with ${m.name}${skills?` for: ${skills}`:""}.`);render();}
+
+var repRange="all";
+function renderReports(){
+  var now=new Date(),filter=items=>{if(repRange==="all")return items;var c=new Date();if(repRange==="30")c.setDate(now.getDate()-30);if(repRange==="90")c.setDate(now.getDate()-90);if(repRange==="year")c.setFullYear(now.getFullYear()-1);return items.filter(i=>new Date(i.created_at)>=c);};
+  var fr=filter(S.requests),fm=filter(S.meetings);
+  var byKey=(arr,k)=>arr.reduce((a,r)=>{var v=r[k]||"Unknown";a[v]=(a[v]||0)+1;return a;},{});
+  var rByType=byKey(fr,"type"),rByStatus=byKey(fr,"status"),mByAdv=byKey(fm,"advocate_name");
+  var ful=fr.filter(r=>r.status==="Fulfilled"),ah=fr.filter(r=>r.need_level==="Advocate-handled"),nl=fr.filter(r=>r.need_level==="Needs leadership");
+  var R2=(l,v)=>`<div class="rep-row"><div style="color:#555">${esc(String(l))}</div><div style="font-weight:600;color:#111">${v}</div></div>`;
+  var Sec=(t,c)=>`<div class="card" style="margin-bottom:12px"><div style="font-size:15px;font-weight:700;color:#111;margin-bottom:12px">${t}</div>${c}</div>`;
+  return`<div class="pg on"><div class="prow"><div class="ptitle">Reports</div><select onchange="setRepRange(this.value)" style="border:1px solid #ccc;border-radius:8px;padding:6px 10px;font-size:13px"><option value="all">All time</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option><option value="year">Last year</option></select></div><div class="g2"><div class="stat" style="background:#dbeafe"><div style="font-size:24px;font-weight:700;color:#1e40af">${fm.length}</div><div style="font-size:12px;color:#1e40af;margin-top:2px">Total contacts</div></div><div class="stat" style="background:#fef3c7"><div style="font-size:24px;font-weight:700;color:#92400e">${fr.length}</div><div style="font-size:12px;color:#92400e;margin-top:2px">Total requests</div></div><div class="stat" style="background:#dcfce7"><div style="font-size:24px;font-weight:700;color:#14532d">${ful.length}</div><div style="font-size:12px;color:#14532d;margin-top:2px">Fulfilled</div></div><div class="stat" style="background:#fee2e2"><div style="font-size:24px;font-weight:700;color:#7f1d1d">${nl.length}</div><div style="font-size:12px;color:#7f1d1d;margin-top:2px">Needs leadership</div></div></div>${Sec("Requests by type",Object.entries(rByType).map(([k,v])=>R2(k,v)).join("")||'<div style="font-size:13px;color:#aaa">No data yet.</div>')}${Sec("Requests by status",Object.entries(rByStatus).map(([k,v])=>R2(k,v)).join(""))}${Sec("Requests by level",R2("Advocate-handled",ah.length)+R2("Needs leadership",nl.length))}${Sec("Contacts by advocate",Object.entries(mByAdv).map(([k,v])=>R2(k,v)).join("")||'<div style="font-size:13px;color:#aaa">No contacts yet.</div>')}${Sec("Fulfilled requests",ful.length?ful.map(r=>`<div style="padding:8px 0;border-bottom:1px solid #f5f5f5"><div style="font-size:13px;font-weight:600;color:#111">${esc(r.leader_name||"—")}</div><div style="font-size:12px;color:#666">${esc(r.type)} · ${esc((r.description||"").slice(0,60))}</div><div style="font-size:11px;color:#aaa">${(r.created_at||"").slice(0,10)}</div></div>`).join(""):'<div style="font-size:13px;color:#aaa">No fulfilled requests yet.</div>')}${Sec("Advocate activity",S.advocates.map(a=>{var am=fm.filter(m=>m.advocate_name===a.name).length,ar=fr.filter(r=>r.submitted_by===a.id||r.submitted_by===a.user_id).length,af=fr.filter(r=>(r.submitted_by===a.id||r.submitted_by===a.user_id)&&r.status==="Fulfilled").length;return`<div style="padding:10px 0;border-bottom:1px solid #f5f5f5"><div style="font-size:13px;font-weight:600;color:#111;margin-bottom:4px">${esc(a.name)}</div><div style="font-size:12px;color:#666">Contacts: ${am} · Requests: ${ar} · Fulfilled: ${af}</div></div>`;}).join(""))}</div>`;
+}
+function setRepRange(v){repRange=v;render();}
+
+function renderSettings(){
+  var rows=S.users.map(u=>`<div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #f0f0f0"><div style="display:flex;gap:10px;align-items:center">${av(u.name,32,u.role==="admin"?"#B5D4F4":"#9FE1CB",u.role==="admin"?"#185FA5":"#065f46")}<div><div style="font-size:13px;font-weight:600;color:#111">${esc(u.name)}</div><div style="font-size:11px;color:#888">${u.role==="admin"?"Admin":"Advocate"}</div></div></div><button class="btn sm" style="border-color:#185FA5;color:#185FA5" onclick="openPinReset(${JSON.stringify(u.id)},${JSON.stringify(u.name)})">Reset PIN</button></div>`).join("");
+  return`<div class="pg on"><div class="ptitle">Settings</div><div style="font-size:13px;color:#666;margin-bottom:16px">Reset a team member's PIN if they've been locked out.</div><div class="card"><div class="sec-title">Manage PINs</div>${rows}</div></div>`;
+}
+function openPinReset(userId,userName){
+  var body=`<label class="flbl">New PIN (min 4 digits)</label><input id="pr-new" type="password" inputmode="numeric" placeholder="Enter new PIN"><label class="flbl">Confirm new PIN</label><input id="pr-confirm" type="password" inputmode="numeric" placeholder="Re-enter new PIN"><div id="pr-msg" style="font-size:13px;margin:8px 0;display:none"></div><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="pr-save" style="flex:2">Save New PIN</button></div>`;
+  openSheet(`Reset PIN — ${userName}`,body,function(){
+    document.getElementById("pr-save").onclick=async function(){var np=document.getElementById("pr-new").value,cp=document.getElementById("pr-confirm").value,msg=document.getElementById("pr-msg");msg.style.display="block";if(np.length<4){msg.style.color="#E24B4A";msg.textContent="PIN must be at least 4 digits.";return;}if(np!==cp){msg.style.color="#E24B4A";msg.textContent="PINs do not match.";return;}if(S.users.filter(u=>u.id!==userId).some(u=>u.pin===np)){msg.style.color="#E24B4A";msg.textContent="That PIN is already in use.";return;}await api.update("users",userId,{pin:np});var u=S.users.find(x=>x.id===userId);if(u)u.pin=np;msg.style.color="#3B6D11";msg.textContent="PIN updated successfully!";setTimeout(closeSheet,1200);};
+  });
+}
+
+loadAll();
+</script>
 </body>
 </html>

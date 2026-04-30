@@ -237,7 +237,11 @@ function renderLeaders(){
 }
 function openLeaderSheet(l){
   var advOpts=S.advocates.map(a=>`<option value="${a.id}"${l&&l.advocate_id===a.id?" selected":""}>${esc(a.name)}</option>`).join("");
-  var body=`<label class="flbl">Full name *</label><input id="lf-name" value="${esc(l?l.name:"")}"><label class="flbl">Role</label><input id="lf-role" value="${esc(l?l.role||"":"")}"><label class="flbl">Email</label><input id="lf-email" type="email" value="${esc(l?l.email||":"")}"><label class="flbl">Phone</label><input id="lf-phone" value="${esc(l?l.phone||":"")}"><label class="flbl">Assigned advocate</label><select id="lf-adv"><option value="">-- Select --</option>${advOpts}</select><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="lf-save" style="flex:2">${l?"Save":"Add leader"}</button></div>`;
+  var lname=l?esc(l.name):"";
+  var lrole=l?esc(l.role||""):"";
+  var lemail=l?esc(l.email||""):"";
+  var lphone=l?esc(l.phone||""):"";
+  var body=`<label class="flbl">Full name *</label><input id="lf-name" value="${lname}"><label class="flbl">Role</label><input id="lf-role" value="${lrole}"><label class="flbl">Email</label><input id="lf-email" type="email" value="${lemail}"><label class="flbl">Phone</label><input id="lf-phone" value="${lphone}"><label class="flbl">Assigned advocate</label><select id="lf-adv"><option value="">-- Select --</option>${advOpts}</select><div class="fg"><button class="btn" onclick="closeSheet()" style="flex:1">Cancel</button><button class="btn p" id="lf-save" style="flex:2">${l?"Save":"Add leader"}</button></div>`;
   openSheet(l?"Edit leader":"Add leader",body,function(){document.getElementById("lf-save").onclick=async function(){var name=document.getElementById("lf-name").value.trim();if(!name)return alert("Name required.");var row={name,role:document.getElementById("lf-role").value,email:document.getElementById("lf-email").value,phone:document.getElementById("lf-phone").value,advocate_id:document.getElementById("lf-adv").value||null};if(l){await api.update("leaders",l.id,row);Object.assign(S.leaders.find(x=>x.id===l.id),row);}else{row.id=uid();row.created_at=new Date().toISOString();await api.insert("leaders",row);S.leaders.push(row);}closeSheet();S.tab="leaders";render();};});
 }
 function editLeader(id){openLeaderSheet(S.leaders.find(l=>l.id===id));}

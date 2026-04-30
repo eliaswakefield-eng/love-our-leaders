@@ -177,8 +177,8 @@ function attachLogin(){
 
 function renderApp(){
   var u=S.currentUser,isAdmin=u.role==="admin";
-  var tabs=isAdmin?["dashboard","leaders","advocates","meetings","requests","members","matching","reports","settings"]:["dashboard","meetings","requests"];
-  var labels=isAdmin?["Home","Leaders","Advocates","Meetings","Requests","Members","Matching","Reports","Settings"]:["Home","My Meetings","My Requests"];
+  var tabs=isAdmin?["dashboard","leaders","advocates","meetings","requests","members","matching","reports","settings"]:["dashboard","meetings","requests","members"];
+  var labels=isAdmin?["Home","Leaders","Advocates","Meetings","Requests","Members","Matching","Reports","Settings"]:["Home","My Meetings","My Requests","Members"];
   var myNotifs=S.notifs.filter(n=>n.for_user_id===u.id);
   var unread=myNotifs.length;
   var badge=unread>0?`<div class="bell-badge">${unread}</div>`:"";
@@ -202,7 +202,7 @@ function loadPageContent(){
     case"advocates":if(isAdmin){el.innerHTML=renderAdvocates();}break;
     case"meetings":el.innerHTML=renderMeetings();break;
     case"requests":el.innerHTML=renderRequests();break;
-    case"members":if(isAdmin){el.innerHTML=renderMembers();}break;
+    case"members":el.innerHTML=renderMembers();break;
     case"matching":if(isAdmin){el.innerHTML=renderMatching();}break;
     case"reports":if(isAdmin){el.innerHTML=renderReports();}break;
     case"settings":if(isAdmin){el.innerHTML=renderSettings();}break;
